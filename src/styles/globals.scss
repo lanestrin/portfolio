@@ -1,0 +1,169 @@
+/* ==========================================================================
+   Design Tokens
+   ========================================================================== */
+
+:root {
+    /* Colors */
+    --color-primary: #10253a;
+    --color-primary-hover: #183654;
+
+    --color-text: #1f2937;
+    --color-muted: #6b7280;
+    --color-border: #e5e7eb;
+
+    --color-background: #ffffff;
+    --color-surface: #ffffff;
+    --color-surface-soft: #f8fafc;
+
+    /* Transparent Colors */
+    --color-primary-04: rgba(16, 37, 58, 0.04);
+    --color-primary-06: rgba(16, 37, 58, 0.06);
+    --color-primary-08: rgba(16, 37, 58, 0.08);
+    --color-primary-10: rgba(16, 37, 58, 0.1);
+    --color-primary-14: rgba(16, 37, 58, 0.14);
+    --color-primary-18: rgba(16, 37, 58, 0.18);
+    --color-primary-22: rgba(16, 37, 58, 0.22);
+
+    /* Typography */
+    --font-heading: "Roboto Condensed Variable", sans-serif;
+    --font-body: "Inter Variable", sans-serif;
+
+    /* Container */
+    --container-width: 1200px;
+    --container-padding: clamp(1.25rem, 4vw, 2rem);
+
+    /* Spacing */
+    --space-xs: 0.25rem;
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+
+    /* Radius */
+    --radius-sm: 0.5rem;
+    --radius-md: 0.9rem;
+    --radius-lg: 1.25rem;
+    --radius-xl: 1.5rem;
+    --radius-pill: 999px;
+
+    /* Shadows */
+    --shadow-sm: 0 12px 28px rgba(16, 37, 58, 0.1);
+    --shadow-md: 0 18px 38px rgba(16, 37, 58, 0.14);
+    --shadow-lg: 0 24px 60px rgba(16, 37, 58, 0.16);
+
+    /* Layout */
+    --header-height: 72px;
+
+    /* Motion */
+    --transition: 180ms ease;
+}
+
+/* ==========================================================================
+   Reset
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+
+    background: var(--color-background);
+    color: var(--color-text);
+
+    font-family: var(--font-body);
+    line-height: 1.6;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+body::selection {
+    color: #ffffff;
+    background: var(--color-primary);
+}
+
+/* ==========================================================================
+   Elements
+   ========================================================================== */
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+/* ==========================================================================
+   Accessibility
+   ========================================================================== */
+
+:focus-visible {
+    outline: 3px solid rgba(16, 37, 58, 0.22);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+/* ==========================================================================
+   Selection
+   ========================================================================== */
+
+::selection {
+    color: #ffffff;
+    background: var(--color-primary);
+}

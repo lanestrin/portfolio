@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+.site {
+    min-height: 100vh;
+    overflow-x: clip;
+}
+
+.container {
+    width: min(var(--container-width), calc(100% - var(--container-padding) * 2));
+    margin-inline: auto;
+}
+
+.section {
+    padding-block: var(--space-xl);
+}
+
+.grid {
+    display: grid;
+}
+
+.flex {
+    display: flex;
+}
