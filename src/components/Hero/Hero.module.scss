@@ -1,28 +1,33 @@
 .hero {
     position: relative;
-    padding: clamp(4.5rem, 8vw, 7rem) 0 clamp(2rem, 4vw, 3rem);
+    overflow: hidden;
+
+    padding: clamp(4.75rem, 8vw, 7rem) 0 clamp(3rem, 5vw, 4rem);
     background: var(--color-background);
 }
 
 .hero::after {
     content: "";
     position: absolute;
-    right: 0;
-    top: 8rem;
+    right: -1px;
+    top: clamp(6rem, 12vw, 8rem);
+
     width: min(18vw, 16rem);
     height: min(18vw, 16rem);
+
     border-top: 1px solid var(--color-border);
     border-left: 1px solid var(--color-border);
     border-top-left-radius: 100%;
-    opacity: 0.8;
+
+    opacity: 0.72;
     pointer-events: none;
 }
 
 .content {
     display: grid;
-    grid-template-columns: 64px minmax(0, 1fr) minmax(240px, 300px);
-    gap: clamp(1.5rem, 4vw, 3rem);
-    align-items: start;
+    grid-template-columns: 64px minmax(0, 1fr) minmax(250px, 315px);
+    gap: clamp(1.5rem, 4vw, 3.25rem);
+    align-items: center;
 }
 
 .socialRail {
@@ -30,7 +35,8 @@
     flex-direction: column;
     align-items: center;
     gap: 1rem;
-    padding-top: 6.75rem;
+
+    padding-top: 1rem;
 }
 
 .railLabel {
@@ -41,6 +47,7 @@
     font-size: 0.68rem;
     font-weight: 700;
     letter-spacing: 0.18em;
+    line-height: 1.2;
     text-transform: uppercase;
     color: var(--color-muted);
 }
@@ -48,7 +55,7 @@
 .railLinks {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.7rem;
 }
 
 .railLink {
@@ -56,8 +63,8 @@
     align-items: center;
     justify-content: center;
 
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     border: 1px solid transparent;
     border-radius: var(--radius-pill);
     color: var(--color-primary);
@@ -65,11 +72,17 @@
     transition:
         transform var(--transition),
         border-color var(--transition),
-        background var(--transition);
+        background var(--transition),
+        color var(--transition);
+
+    svg {
+        width: 0.9rem;
+        height: 0.9rem;
+    }
 
     &:hover {
         transform: translateX(2px);
-        border-color: var(--color-border);
+        border-color: rgba(16, 37, 58, 0.12);
         background: var(--color-primary-04);
     }
 
@@ -77,25 +90,21 @@
         outline: 3px solid rgba(16, 37, 58, 0.16);
         outline-offset: 3px;
     }
-
-    svg {
-        width: 0.95rem;
-        height: 0.95rem;
-    }
 }
 
 .left {
-    max-width: 780px;
+    max-width: 810px;
 }
 
 .eyebrow {
     display: inline-block;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.15rem;
 
     font-family: var(--font-heading);
-    font-size: 0.78rem;
+    font-size: 0.74rem;
     font-weight: 700;
     letter-spacing: 0.18em;
+    line-height: 1.2;
     text-transform: uppercase;
     color: var(--color-primary);
 }
@@ -104,33 +113,33 @@
     margin: 0;
 
     font-family: var(--font-heading);
-    font-size: clamp(4.25rem, 10vw, 8rem);
-    font-weight: 500;
-    line-height: 0.88;
-    letter-spacing: -0.06em;
+    font-size: clamp(4.75rem, 10.5vw, 8.75rem);
+    font-weight: 600;
+    line-height: 0.84;
+    letter-spacing: -0.065em;
     text-transform: uppercase;
     color: var(--color-primary);
     text-wrap: balance;
 }
 
 .title {
-    margin-top: 1.2rem;
+    margin-top: 1.25rem;
 
     font-family: var(--font-heading);
     font-size: clamp(1rem, 2vw, 1.3rem);
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.18em;
-    line-height: 1.35;
+    line-height: 1.3;
     text-transform: uppercase;
     color: var(--color-primary);
 }
 
 .summary {
     max-width: 42rem;
-    margin-top: 2rem;
+    margin-top: 1.75rem;
 
-    font-size: 1.05rem;
-    line-height: 1.9;
+    font-size: 1.03rem;
+    line-height: 1.82;
     color: var(--color-muted);
 }
 
@@ -138,7 +147,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.9rem;
-    margin-top: 2.25rem;
+
+    margin-top: 2.1rem;
 }
 
 .primaryButton,
@@ -148,11 +158,11 @@
     justify-content: center;
     gap: 0.6rem;
 
-    min-height: 48px;
-    padding: 0 1.2rem;
+    min-height: 46px;
+    padding: 0 1.15rem;
     border-radius: var(--radius-pill);
 
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     font-weight: 750;
     line-height: 1;
 
@@ -163,8 +173,8 @@
         color var(--transition);
 
     svg {
-        width: 0.95rem;
-        height: 0.95rem;
+        width: 0.9rem;
+        height: 0.9rem;
         flex: 0 0 auto;
     }
 
@@ -194,23 +204,37 @@
     background: transparent;
     color: var(--color-primary);
 
+    svg {
+        transition: transform var(--transition);
+    }
+
     &:hover {
-        border-color: var(--color-primary);
+        border-color: rgba(16, 37, 58, 0.22);
         background: var(--color-primary-04);
+
+        svg {
+            transform: translate(2px, -2px);
+        }
     }
 }
 
 .meta {
+    min-width: 0;
     padding-left: clamp(1.25rem, 2vw, 2rem);
     border-left: 1px solid var(--color-border);
 }
 
 .metaSection {
-    padding-bottom: 1.4rem;
+    padding-bottom: 1.25rem;
     border-bottom: 1px solid var(--color-border);
 
     & + .metaSection {
-        margin-top: 1.4rem;
+        margin-top: 1.25rem;
+    }
+
+    &:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
     }
 }
 
@@ -219,23 +243,24 @@
     margin-bottom: 1rem;
 
     font-family: var(--font-heading);
-    font-size: 0.72rem;
+    font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.18em;
+    line-height: 1.2;
     text-transform: uppercase;
     color: var(--color-muted);
 }
 
 .contactList {
     display: grid;
-    gap: 1rem;
+    gap: 0.82rem;
     font-style: normal;
 }
 
 .contactItem {
     display: grid;
-    grid-template-columns: 20px 1fr;
-    gap: 0.75rem;
+    grid-template-columns: 18px minmax(0, 1fr);
+    gap: 0.72rem;
     align-items: start;
 }
 
@@ -243,12 +268,13 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     color: var(--color-primary);
-    transform: translateY(2px);
+    transform: translateY(0.2rem);
 
     svg {
-        width: 0.9rem;
-        height: 0.9rem;
+        width: 0.82rem;
+        height: 0.82rem;
     }
 }
 
@@ -258,12 +284,13 @@
 
 .itemLabel {
     display: block;
-    margin-bottom: 0.18rem;
+    margin-bottom: 0.16rem;
 
     font-family: var(--font-heading);
-    font-size: 0.68rem;
+    font-size: 0.66rem;
     font-weight: 700;
     letter-spacing: 0.16em;
+    line-height: 1.2;
     text-transform: uppercase;
     color: var(--color-muted);
 }
@@ -272,9 +299,9 @@
     display: block;
     overflow: hidden;
 
-    font-size: 0.96rem;
+    font-size: 0.92rem;
     font-weight: 650;
-    line-height: 1.4;
+    line-height: 1.35;
     text-overflow: ellipsis;
     white-space: nowrap;
     color: var(--color-text);
@@ -289,25 +316,27 @@
 .stackList {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.6rem;
+    gap: 0.5rem;
 }
 
 .stackItem {
     display: inline-flex;
     align-items: center;
-    gap: 0.45rem;
+    gap: 0.42rem;
 
-    padding: 0.45rem 0.7rem;
-    border: 1px solid var(--color-border);
+    padding: 0.38rem 0.62rem;
+    border: 1px solid rgba(16, 37, 58, 0.1);
     border-radius: var(--radius-pill);
 
-    font-size: 0.86rem;
+    font-size: 0.78rem;
     font-weight: 700;
-    color: var(--color-primary);
+    line-height: 1;
+    color: rgba(16, 37, 58, 0.78);
+    background: rgba(16, 37, 58, 0.022);
 
     svg {
-        width: 0.95rem;
-        height: 0.95rem;
+        width: 0.86rem;
+        height: 0.86rem;
         flex: 0 0 auto;
     }
 }
@@ -315,6 +344,7 @@
 @media (max-width: 1100px) {
     .content {
         grid-template-columns: 1fr;
+        align-items: start;
     }
 
     .socialRail {
@@ -334,31 +364,36 @@
     }
 
     .meta {
-        padding-left: 0;
-        border-left: none;
-        border-top: 1px solid var(--color-border);
-        padding-top: 1.5rem;
         max-width: 42rem;
+        padding-top: 1.5rem;
+        padding-left: 0;
+        border-top: 1px solid var(--color-border);
+        border-left: none;
     }
 }
 
 @media (max-width: 760px) {
     .hero {
-        padding: 3.75rem 0 2.75rem;
+        padding: 3.5rem 0 3rem;
     }
 
     .name {
-        font-size: clamp(3.25rem, 16vw, 5.2rem);
+        font-size: clamp(3.4rem, 16vw, 5.2rem);
+        line-height: 0.9;
+    }
+
+    .title {
+        margin-top: 1rem;
     }
 
     .summary {
-        margin-top: 1.5rem;
+        margin-top: 1.4rem;
         font-size: 1rem;
-        line-height: 1.8;
+        line-height: 1.75;
     }
 
     .actions {
-        margin-top: 1.8rem;
+        margin-top: 1.75rem;
     }
 
     .primaryButton,
@@ -379,5 +414,9 @@
 
     .railLinks {
         flex-direction: row;
+    }
+
+    .stackItem {
+        font-size: 0.74rem;
     }
 }

@@ -7,12 +7,12 @@ const positions = [
         period: "Nov 2024 — Present",
         meta: "Enterprise Web Applications",
         bullets: [
-            "Build and maintain enterprise web applications supporting product customization, decoration workflows, ordering, and fulfillment operations.",
-            "Develop scalable React, Next.js, and TypeScript interfaces with reusable components, shared utilities, and maintainable frontend patterns.",
-            "Partner with product owners, designers, QA, and engineering teams to move features from concept through production release.",
-            "Improve application consistency, frontend architecture, and delivery quality across business-critical user workflows.",
+            "Supported the migration of the graphic engine and Pulse API to a new server, validating functionality across environments and helping ensure application continuity during infrastructure changes.",
+            "Led a major checkout page refactor for Coach’s Assistant, resolving payment-processing issues where payment methods could process twice or fail to create orders after payment was taken.",
+            "Converted legacy .NET MVC frontend workflows to React and TypeScript to improve UI/UX, stabilize checkout behavior, and make the application easier to maintain.",
+            "Contributed to modernization planning for transitioning legacy .NET MVC architecture toward updated .NET backend services and a Vite-powered frontend.",
         ],
-        stack: ["React", "Next.js", "TypeScript", "Frontend Architecture"],
+        stack: ["React", "TypeScript", ".NET MVC", "Pulse API", "Vite"],
     },
     {
         role: "Developer Applications III",
@@ -20,12 +20,12 @@ const positions = [
         period: "Jun 2022 — Nov 2024",
         meta: "Application Development",
         bullets: [
-            "Developed enterprise React applications supporting internal business operations, commerce workflows, and large-scale application needs.",
-            "Integrated REST APIs and platform services across frontend applications, including .NET MVC-backed systems, payment workflows, tax services, and Shopify API touchpoints.",
-            "Implemented BDD and automated testing practices using Playwright and Jest to reduce regression risk and improve release confidence.",
-            "Collaborated with Product, UX, QA, DevOps, and backend teams to deliver production-ready software in an enterprise environment.",
+            "Implemented Adyen payment processing improvements for commerce workflows, supporting more reliable payment handling across enterprise application releases.",
+            "Integrated and supported payment, tax, and platform services across React applications, including Adyen, tax API implementations, Shopify API touchpoints, G4, and Cookies plugin work.",
+            "Developed enterprise React applications connected to REST APIs and .NET MVC-backed systems supporting internal operations and customer-facing commerce workflows.",
+            "Implemented BDD and automated testing practices with Playwright and Jest to protect critical user flows and improve release confidence.",
         ],
-        stack: ["React", "REST APIs", ".NET MVC", "Playwright", "Jest"],
+        stack: ["React", "REST APIs", ".NET MVC", "Adyen", "Playwright"],
     },
     {
         role: "Research & Development Coordinator",
@@ -35,7 +35,7 @@ const positions = [
         bullets: [
             "Led research and process improvement initiatives across product development, manufacturing workflows, and internal business operations.",
             "Evaluated emerging technologies and workflow opportunities to improve efficiency, documentation, and cross-department collaboration.",
-            "Worked closely with software developers and business stakeholders to improve internal applications, tooling, and operational processes.",
+            "Partnered with software developers and business stakeholders to improve internal tools, operational processes, and application workflows.",
         ],
         stack: ["Process Improvement", "Product Development", "Research"],
     },
@@ -45,7 +45,7 @@ const positions = [
         period: "Jan 2014 — Present",
         meta: "Interface Design",
         bullets: [
-            "Designed responsive interfaces and user experiences for web applications with a focus on clarity, layout, and usability.",
+            "Designed responsive interfaces and user experiences for web applications with a focus on layout, clarity, usability, and visual hierarchy.",
             "Collaborated with developers to translate visual concepts, user flows, and interface decisions into production-ready experiences.",
         ],
         stack: ["UI Design", "UX Design", "Responsive Design"],
@@ -78,7 +78,10 @@ const Experience = () => {
                                     {String(index + 1).padStart(2, "0")}
                                 </span>
 
-                                <span className={styles.dot} aria-hidden="true" />
+                                <span
+                                    className={styles.dot}
+                                    aria-hidden="true"
+                                />
                             </div>
 
                             <div className={styles.body}>

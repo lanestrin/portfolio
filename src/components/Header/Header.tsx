@@ -29,7 +29,7 @@ const Header = () => {
                             <FaDownload aria-hidden="true" />
                         </a>
 
-                        <a href="#teamstore" className={styles.button}>
+                        <a href="https://teamstore-neon.vercel.app/" className={styles.button}>
                             <span>View TeamStore</span>
                             <FaArrowUpRightFromSquare aria-hidden="true" />
                         </a>

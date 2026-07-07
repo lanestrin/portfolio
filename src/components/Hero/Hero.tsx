@@ -107,13 +107,12 @@ const Hero = () => {
                         </p>
 
                         <p className={styles.summary}>
-                            Software engineer with 4+ years of professional
-                            experience building enterprise web applications
-                            using React, Next.js, and modern frontend
-                            technologies. My background in design and product
-                            development allows me to bridge the gap between
-                            user experience and engineering to create scalable,
-                            maintainable software.
+                            Frontend-focused software engineer building
+                            enterprise web applications with React, Next.js,
+                            TypeScript, and modern frontend systems. My design
+                            background helps me turn complex workflows into
+                            scalable, maintainable, and polished user
+                            experiences.
                         </p>
 
                         <div className={styles.actions}>
@@ -127,7 +126,7 @@ const Hero = () => {
                             </a>
 
                             <a
-                                href="#teamstore"
+                                href="https://teamstore-neon.vercel.app/"
                                 className={styles.secondaryButton}
                             >
                                 <span>View TeamStore</span>
