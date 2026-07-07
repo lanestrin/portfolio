@@ -1,27 +1,5 @@
+import { resumeData } from "../../data/resumeData";
 import styles from "./Certification.module.scss";
-
-const certifications = [
-    {
-        title: "Software Architecture & Technology of Large-Scale Systems",
-        provider: "Udemy",
-        category: "Architecture",
-    },
-    {
-        title: "Software Architecture Security",
-        provider: "Udemy",
-        category: "Security",
-    },
-    {
-        title: "Advanced React",
-        provider: "Udemy",
-        category: "Frontend",
-    },
-    {
-        title: "Next.js",
-        provider: "Udemy",
-        category: "Frontend",
-    },
-];
 
 const Certifications = () => {
     return (
@@ -42,7 +20,7 @@ const Certifications = () => {
                 </div>
 
                 <div className={styles.list}>
-                    {certifications.map((certification, index) => (
+                    {resumeData.certifications.map((certification, index) => (
                         <article
                             key={certification.title}
                             className={styles.certification}

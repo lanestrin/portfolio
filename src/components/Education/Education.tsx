@@ -1,23 +1,5 @@
+import { resumeData } from "../../data/resumeData";
 import styles from "./Education.module.scss";
-
-const schools = [
-    {
-        school: "Kansas State University",
-        degree: "Bachelor of Fine Arts",
-        period: "2004 — 2009",
-        focus: "Visual Communication / Graphic Design",
-        description:
-            "Formal design foundation in visual communication, typography, layout, brand systems, and user-centered presentation.",
-    },
-    {
-        school: "Kansas City Kansas Community College",
-        degree: "Associate of Applied Science",
-        period: "2002 — 2004",
-        focus: "Computer Aided Drafting",
-        description:
-            "Technical drafting background that strengthened precision, systems thinking, documentation, and detail-oriented production work.",
-    },
-];
 
 const Education = () => {
     return (
@@ -38,7 +20,7 @@ const Education = () => {
                 </div>
 
                 <div className={styles.list}>
-                    {schools.map((item, index) => (
+                    {resumeData.education.map((item, index) => (
                         <article key={item.school} className={styles.school}>
                             <span className={styles.index}>
                                 {String(index + 1).padStart(2, "0")}
