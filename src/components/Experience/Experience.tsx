@@ -7,10 +7,10 @@ const positions = [
         period: "Nov 2024 — Present",
         meta: "Enterprise Web Applications",
         bullets: [
-            "Develop and maintain enterprise web applications supporting product customization, decoration, and order fulfillment.",
-            "Build modern applications using React, Next.js, TypeScript, and contemporary frontend technologies.",
-            "Collaborate with product owners, designers, QA, and engineering teams to deliver features from concept through deployment.",
-            "Improve frontend architecture through reusable components, shared utilities, and scalable design patterns.",
+            "Build and maintain enterprise web applications supporting product customization, decoration workflows, ordering, and fulfillment operations.",
+            "Develop scalable React, Next.js, and TypeScript interfaces with reusable components, shared utilities, and maintainable frontend patterns.",
+            "Partner with product owners, designers, QA, and engineering teams to move features from concept through production release.",
+            "Improve application consistency, frontend architecture, and delivery quality across business-critical user workflows.",
         ],
         stack: ["React", "Next.js", "TypeScript", "Frontend Architecture"],
     },
@@ -20,12 +20,12 @@ const positions = [
         period: "Jun 2022 — Nov 2024",
         meta: "Application Development",
         bullets: [
-            "Developed enterprise React applications supporting internal business operations.",
-            "Implemented Behavior Driven Development practices using Playwright and Jest.",
-            "Integrated REST APIs and optimized frontend performance for large-scale applications.",
-            "Partnered with Product, UX, QA, and DevOps teams to deliver production-ready software.",
+            "Developed enterprise React applications supporting internal business operations, commerce workflows, and large-scale application needs.",
+            "Integrated REST APIs and platform services across frontend applications, including .NET MVC-backed systems, payment workflows, tax services, and Shopify API touchpoints.",
+            "Implemented BDD and automated testing practices using Playwright and Jest to reduce regression risk and improve release confidence.",
+            "Collaborated with Product, UX, QA, DevOps, and backend teams to deliver production-ready software in an enterprise environment.",
         ],
-        stack: ["React", "REST APIs", "Playwright", "Jest"],
+        stack: ["React", "REST APIs", ".NET MVC", "Playwright", "Jest"],
     },
     {
         role: "Research & Development Coordinator",
@@ -33,9 +33,9 @@ const positions = [
         period: "May 2016 — Jun 2022",
         meta: "Product + Process Innovation",
         bullets: [
-            "Led research and process improvement initiatives spanning product development and manufacturing.",
-            "Evaluated emerging technologies and implemented workflow improvements across departments.",
-            "Worked closely with software developers to improve internal applications and business processes.",
+            "Led research and process improvement initiatives across product development, manufacturing workflows, and internal business operations.",
+            "Evaluated emerging technologies and workflow opportunities to improve efficiency, documentation, and cross-department collaboration.",
+            "Worked closely with software developers and business stakeholders to improve internal applications, tooling, and operational processes.",
         ],
         stack: ["Process Improvement", "Product Development", "Research"],
     },
@@ -45,8 +45,8 @@ const positions = [
         period: "Jan 2014 — Present",
         meta: "Interface Design",
         bullets: [
-            "Designed responsive interfaces and user experiences for web applications.",
-            "Collaborated with developers to transform design concepts into production-ready interfaces.",
+            "Designed responsive interfaces and user experiences for web applications with a focus on clarity, layout, and usability.",
+            "Collaborated with developers to translate visual concepts, user flows, and interface decisions into production-ready experiences.",
         ],
         stack: ["UI Design", "UX Design", "Responsive Design"],
     },
@@ -59,28 +59,38 @@ const Experience = () => {
                 <div className={styles.sectionHeader}>
                     <span className={styles.sectionKicker}>Career Record</span>
 
-                    <div>
-                        <h2>Professional Experience</h2>
-                        <p>
-                            A progression from design and product development into
-                            enterprise frontend engineering.
-                        </p>
-                    </div>
+                    <h2>Professional Experience</h2>
+
+                    <p>
+                        A progression from design and product development into
+                        enterprise frontend engineering.
+                    </p>
                 </div>
 
                 <div className={styles.timeline}>
                     {positions.map((position, index) => (
-                        <article key={`${position.company}-${position.role}`} className={styles.position}>
-                            <div className={styles.index}>
-                                {String(index + 1).padStart(2, "0")}
+                        <article
+                            key={`${position.company}-${position.role}`}
+                            className={styles.position}
+                        >
+                            <div className={styles.marker}>
+                                <span className={styles.index}>
+                                    {String(index + 1).padStart(2, "0")}
+                                </span>
+
+                                <span className={styles.dot} aria-hidden="true" />
                             </div>
 
                             <div className={styles.body}>
                                 <div className={styles.positionHeader}>
                                     <div>
-                                        <span className={styles.meta}>{position.meta}</span>
                                         <h3>{position.role}</h3>
-                                        <p>{position.company}</p>
+
+                                        <p>
+                                            <span>{position.company}</span>
+                                            <span aria-hidden="true">•</span>
+                                            <span>{position.meta}</span>
+                                        </p>
                                     </div>
 
                                     <span className={styles.period}>
@@ -94,7 +104,10 @@ const Experience = () => {
                                     ))}
                                 </ul>
 
-                                <ul className={styles.stackList} aria-label={`${position.role} skills`}>
+                                <ul
+                                    className={styles.stackList}
+                                    aria-label={`${position.role} skills`}
+                                >
                                     {position.stack.map((item) => (
                                         <li key={item}>{item}</li>
                                     ))}

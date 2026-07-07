@@ -7,13 +7,7 @@ const schools = [
         period: "2004 — 2009",
         focus: "Visual Communication / Graphic Design",
         description:
-            "Formal design foundation focused on visual communication, layout, typography, brand systems, and user-centered presentation.",
-        tags: [
-            "Visual Communication",
-            "Graphic Design",
-            "Typography",
-            "Layout Systems",
-        ],
+            "Formal design foundation in visual communication, typography, layout, brand systems, and user-centered presentation.",
     },
     {
         school: "Kansas City Kansas Community College",
@@ -22,12 +16,6 @@ const schools = [
         focus: "Computer Aided Drafting",
         description:
             "Technical drafting background that strengthened precision, systems thinking, documentation, and detail-oriented production work.",
-        tags: [
-            "CAD",
-            "Technical Drafting",
-            "Documentation",
-            "Precision",
-        ],
     },
 ];
 
@@ -40,15 +28,13 @@ const Education = () => {
                         Academic Foundation
                     </span>
 
-                    <div>
-                        <h2>Education</h2>
+                    <h2>Education</h2>
 
-                        <p>
-                            A design-centered academic background that supports
-                            strong interface judgment, visual communication, and
-                            detail-oriented technical execution.
-                        </p>
-                    </div>
+                    <p>
+                        A design-centered academic background that supports
+                        interface judgment, visual communication, and
+                        detail-oriented technical execution.
+                    </p>
                 </div>
 
                 <div className={styles.list}>
@@ -58,7 +44,7 @@ const Education = () => {
                                 {String(index + 1).padStart(2, "0")}
                             </span>
 
-                            <div className={styles.schoolMain}>
+                            <div className={styles.schoolBody}>
                                 <div className={styles.schoolHeader}>
                                     <div>
                                         <span className={styles.focus}>
@@ -78,15 +64,6 @@ const Education = () => {
                                 <p className={styles.description}>
                                     {item.description}
                                 </p>
-
-                                <ul
-                                    className={styles.tags}
-                                    aria-label={`${item.school} areas of study`}
-                                >
-                                    {item.tags.map((tag) => (
-                                        <li key={tag}>{tag}</li>
-                                    ))}
-                                </ul>
                             </div>
                         </article>
                     ))}

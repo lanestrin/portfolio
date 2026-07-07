@@ -1,17 +1,22 @@
+import { FaCode, FaPenNib, FaPlug } from "react-icons/fa6";
+
 import styles from "./Expertise.module.scss";
 
 const proofPoints = [
     {
         label: "Primary Focus",
         value: "Frontend Architecture",
+        icon: FaCode,
     },
     {
         label: "Integration Strength",
-        value: "Commerce + APIs",
+        value: "Commerce Systems + APIs",
+        icon: FaPlug,
     },
     {
         label: "Differentiator",
         value: "Design + Engineering",
+        icon: FaPenNib,
     },
 ];
 
@@ -31,7 +36,7 @@ const expertiseAreas = [
     {
         title: "API & Platform Integration",
         description:
-            "Connect user-facing applications to business-critical services across commerce, payments, tax, and internal platforms, including .NET MVC systems, Adyen payment workflows, Shopify APIs, tax API implementations, and REST-based integrations.",
+            "Connect frontend applications to business-critical services across commerce, payments, tax, and internal platforms, including .NET MVC systems, Adyen payment workflows, Shopify APIs, tax API implementations, and REST-based integrations.",
         tools: [
             ".NET",
             ".NET MVC",
@@ -85,22 +90,29 @@ const TechnicalExpertise = () => {
                         Technical Range
                     </span>
 
-                    <div>
-                        <h2>Technical Expertise</h2>
+                    <h2>Technical Expertise</h2>
 
-                        <p>
-                            Frontend-focused engineering with the testing, API,
-                            delivery, commerce, and design fluency needed to
-                            ship polished enterprise applications.
-                        </p>
-                    </div>
+                    <p>
+                        Frontend-focused engineering with the testing, API,
+                        delivery, commerce, and design fluency needed to ship
+                        polished enterprise applications.
+                    </p>
                 </div>
 
                 <div className={styles.proofStrip} aria-label="Technical summary">
-                    {proofPoints.map((point) => (
-                        <div key={point.label} className={styles.proofItem}>
-                            <span>{point.label}</span>
-                            <strong>{point.value}</strong>
+                    {proofPoints.map(({ label, value, icon: Icon }) => (
+                        <div key={label} className={styles.proofItem}>
+                            <span className={styles.proofIcon} aria-hidden="true">
+                                <Icon />
+                            </span>
+
+                            <div>
+                                <span className={styles.proofLabel}>
+                                    {label}
+                                </span>
+
+                                <strong>{value}</strong>
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -118,16 +130,16 @@ const TechnicalExpertise = () => {
 
                             <div className={styles.rowBody}>
                                 <p>{area.description}</p>
-
-                                <ul
-                                    className={styles.tools}
-                                    aria-label={`${area.title} tools and technologies`}
-                                >
-                                    {area.tools.map((tool) => (
-                                        <li key={tool}>{tool}</li>
-                                    ))}
-                                </ul>
                             </div>
+
+                            <ul
+                                className={styles.tools}
+                                aria-label={`${area.title} tools and technologies`}
+                            >
+                                {area.tools.map((tool) => (
+                                    <li key={tool}>{tool}</li>
+                                ))}
+                            </ul>
                         </article>
                     ))}
                 </div>

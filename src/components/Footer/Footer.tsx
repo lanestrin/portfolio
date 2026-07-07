@@ -29,22 +29,28 @@ const Footer = () => {
     return (
         <footer className={styles.footer}>
             <div className="container">
+                <div className={styles.masthead}>
+                    <span>Portfolio / Resume</span>
+                    <span>Lan Nguyen</span>
+                    <span>{new Date().getFullYear()}</span>
+                </div>
+
                 <div className={styles.content}>
                     <div className={styles.statementBlock}>
-                        <span className={styles.kicker}>Let’s Connect</span>
+                        <span className={styles.kicker}>Final Note</span>
 
                         <p className={styles.statement}>
-                            Designed by background.
-                            <br />
-                            Engineered by profession.
+                            <span>Designed by background.</span>
+                            <span>Driven by code.</span>
                         </p>
                     </div>
 
-                    <div className={styles.contactBlock}>
+                    <aside className={styles.contactPanel} aria-label="Contact details">
+                        <span className={styles.panelLabel}>Available For</span>
+
                         <p>
-                            Open to frontend application development,
-                            enterprise UI engineering, and product-focused
-                            engineering opportunities.
+                            Frontend application development, enterprise UI
+                            engineering, and product-focused engineering roles.
                         </p>
 
                         <a
@@ -54,7 +60,7 @@ const Footer = () => {
                             <span>Start a conversation</span>
                             <FaArrowUpRightFromSquare aria-hidden="true" />
                         </a>
-                    </div>
+                    </aside>
                 </div>
 
                 <div className={styles.bottom}>
