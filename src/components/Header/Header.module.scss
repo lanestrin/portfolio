@@ -1,0 +1,115 @@
+.header {
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-background);
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 72px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    transition: opacity var(--transition), transform var(--transition);
+
+    &:hover {
+        opacity: 0.8;
+        transform: translateY(-1px);
+    }
+
+    &:focus-visible {
+        outline: 3px solid rgba(16, 37, 58, 0.16);
+        outline-offset: 4px;
+    }
+}
+
+.logo {
+    width: 42px;
+    height: 42px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.button,
+.iconButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+    border-radius: var(--radius-pill);
+
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1;
+
+    transition:
+        background var(--transition),
+        border-color var(--transition),
+        color var(--transition),
+        transform var(--transition);
+
+    svg {
+        width: 0.9rem;
+        height: 0.9rem;
+        flex: 0 0 auto;
+    }
+
+    &:hover {
+        transform: translateY(-1px);
+    }
+
+    &:focus-visible {
+        outline: 3px solid rgba(16, 37, 58, 0.16);
+        outline-offset: 3px;
+    }
+}
+
+.button {
+    gap: 0.55rem;
+    padding: 0 1.1rem;
+    border: 1px solid var(--color-primary);
+    background: var(--color-primary);
+    color: #ffffff;
+
+    &:hover {
+        border-color: var(--color-primary-hover);
+        background: var(--color-primary-hover);
+    }
+}
+
+.iconButton {
+    width: 42px;
+    border: 1px solid var(--color-border);
+    background: transparent;
+    color: var(--color-primary);
+
+    &:hover {
+        border-color: var(--color-primary);
+        background: var(--color-primary-04);
+    }
+}
+
+@media (max-width: 560px) {
+    .button {
+        width: 42px;
+        padding: 0;
+
+        span {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            clip: rect(0 0 0 0);
+            white-space: nowrap;
+        }
+    }
+}
