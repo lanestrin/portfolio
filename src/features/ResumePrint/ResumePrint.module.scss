@@ -31,8 +31,7 @@
     }
 }
 
-.eyebrow,
-.sectionTitle span {
+.eyebrow {
     display: block;
     margin-bottom: 10px;
     font-size: 11px;
@@ -97,16 +96,12 @@
 .stack {
     display: flex;
     flex-direction: column;
-    gap: 56px;
 }
 
-.organization {
-    break-inside: auto;
-    page-break-inside: auto;
-
-    &:last-child {
-        margin-bottom: 0;
-    }
+.organization + .organization {
+    margin-top: 28px;
+    padding-top: 28px;
+    border-top: 1px solid var(--color-primary-14);
 }
 
 .organizationIntro {
@@ -116,8 +111,6 @@
 
 .organizationHeader {
     margin-bottom: 28px;
-    padding-bottom: 18px;
-    border-bottom: 1px solid var(--color-primary-14);
 }
 
 .organizationMeta {
@@ -151,27 +144,25 @@
     display: flex;
     align-items: center;
     gap: 12px;
-
     margin: 0;
     padding: 0;
-
     list-style: none;
-}
 
-.organizationProgress li {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
+    li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
 
-.organizationProgress span {
-    font-family: "Roboto Condensed Variable", sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: -0.03em;
-    text-transform: uppercase;
-    white-space: nowrap;
+    span {
+        font-family: "Roboto Condensed Variable", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
 }
 
 .transitionIcon {
@@ -182,7 +173,6 @@
 .organizationSummary {
     max-width: 72%;
     margin: 14px 0 0;
-
     font-size: 11.5px;
     line-height: 1.6;
     color: var(--color-muted);
@@ -192,42 +182,30 @@
     margin-top: 26px;
     padding-top: 26px;
     border-top: 1px solid var(--color-primary-08);
-
     break-inside: avoid;
     page-break-inside: avoid;
-
-    &:first-of-type {
-        margin-top: 0;
-        padding-top: 0;
-        border-top: none;
-    }
 
     ul {
         margin: 0;
         padding-left: 1.5rem;
         list-style: none;
-
     }
 
     li {
-        width: 80%;
         position: relative;
-        padding-left: 18px;
+        width: 80%;
         margin-bottom: 8px;
-
+        padding-left: 18px;
         font-size: 11.5px;
         line-height: 1.55;
 
         &::before {
             content: "";
-
             position: absolute;
-            left: 0;
             top: 0.72em;
-
+            left: 0;
             width: 4px;
             height: 4px;
-
             border-radius: 50%;
             background: var(--color-primary);
         }
@@ -237,15 +215,12 @@
 .jobHeader {
     display: grid;
     grid-template-columns: 1fr auto;
-    gap: 20px;
-
     align-items: start;
-
+    gap: 20px;
     margin-bottom: 12px;
 
     h3 {
         margin: 0;
-
         font-family: "Roboto Condensed Variable", sans-serif;
         font-size: 21px;
         line-height: 1;
@@ -254,7 +229,6 @@
 
     p {
         margin: 5px 0 0;
-
         font-size: 11px;
         line-height: 1.45;
         color: var(--color-muted);
@@ -262,13 +236,10 @@
 
     > span {
         margin-top: 2px;
-
         white-space: nowrap;
-
         font-size: 11px;
         font-weight: 500;
         letter-spacing: 0.03em;
-
         color: var(--color-muted);
     }
 }
@@ -281,16 +252,13 @@
 
     span {
         padding: 3px 8px;
-
         border: 1px solid rgba(23, 34, 40, 0.15);
         border-radius: 999px;
-
         font-size: 8.5px;
         font-weight: 700;
         line-height: 1;
         letter-spacing: 0.08em;
         text-transform: uppercase;
-
         color: var(--color-primary);
     }
 }
@@ -307,7 +275,6 @@
 
     h3 {
         margin: 0 0 8px;
-
         font-family: "Roboto Condensed Variable", sans-serif;
         font-size: 15px;
         line-height: 1.1;
@@ -315,7 +282,6 @@
 
     p {
         margin: 0;
-
         font-size: 11.5px;
         line-height: 1.55;
     }
@@ -325,25 +291,22 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 36px;
-
     break-inside: avoid;
     page-break-inside: avoid;
 
     .section {
-        border-bottom: 0;
         padding-bottom: 0;
+        border-bottom: 0;
     }
 }
 
 .compactItem {
     margin-bottom: 18px;
-
     break-inside: avoid;
     page-break-inside: avoid;
 
     h3 {
         margin: 0 0 4px;
-
         font-family: "Roboto Condensed Variable", sans-serif;
         font-size: 15px;
         line-height: 1.1;
@@ -351,22 +314,18 @@
 
     p {
         margin: 0 0 4px;
-
         font-size: 11.5px;
         line-height: 1.45;
     }
 
     span {
         display: block;
-
         font-size: 11px;
         color: rgba(23, 34, 40, 0.6);
     }
 }
 
 @media print {
-    
-
     .resumePrint {
         min-height: auto;
         padding: 0;
@@ -383,18 +342,8 @@
         display: block;
     }
 
-    .organization + .organization {
-        margin-top: 56px;
-        padding-bottom: 56px;
-    }
-
     .organizationHeader {
         break-after: avoid;
         page-break-after: avoid;
-    }
-
-    .job {
-        break-inside: avoid;
-        page-break-inside: avoid;
     }
 }
