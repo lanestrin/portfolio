@@ -126,8 +126,9 @@ const Hero = () => {
 
                         <div className={styles.actions}>
                             <a
-                                href="/resume.pdf"
-                                download
+                                href="/resume?print=1"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className={styles.primaryButton}
                             >
                                 <FaDownload aria-hidden="true" />

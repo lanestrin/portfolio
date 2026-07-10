@@ -12,7 +12,7 @@ export interface Profile {
     };
 }
 
-export interface Experience {
+export interface Role {
     role: string;
     company: string;
     period: string;
@@ -21,6 +21,12 @@ export interface Experience {
     stack: string[];
 }
 
+export interface Experience {
+    organization: string[];
+    period: string;
+    description?: string;
+    roles: Role[];
+}
 export interface Expertise {
     title: string;
     description: string;

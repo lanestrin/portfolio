@@ -1,9 +1,14 @@
-import type { Profile, Experience, Expertise, Education, Certification } from "../model/resumeModel";
-
+import type {
+    Profile,
+    Experience,
+    Expertise,
+    Education,
+    Certification,
+} from "../model/resumeModel";
 
 const profile: Profile = {
     name: "Lan Nguyen",
-    title: "Senior Application Developer",
+    title: "Senior Frontend Engineer",
     summary:
         "Frontend-focused software engineer building enterprise web applications with React, Next.js, TypeScript, and modern frontend systems. My design background helps me turn complex workflows into scalable, maintainable, and polished user experiences.",
     contact: {
@@ -18,57 +23,113 @@ const profile: Profile = {
 
 const experience: Experience[] = [
     {
-        role: "Senior Application Developer",
-        company: "Unrivaled Teamwear",
-        period: "Nov 2024 — Present",
-        meta: "Enterprise Web Applications",
-        bullets: [
-            "Supported the migration of the graphic engine and Pulse API to a new server, validating functionality across environments and helping ensure application continuity during infrastructure changes.",
-            "Led a major checkout page refactor for Coach’s Assistant, resolving payment-processing issues where payment methods could process twice or fail to create orders after payment was taken.",
-            "Converted legacy .NET MVC frontend workflows to React and TypeScript to improve UI/UX, stabilize checkout behavior, and make the application easier to maintain.",
-            "Contributed to modernization planning for transitioning legacy .NET MVC architecture toward updated .NET backend services and a Vite-powered frontend.",
+        organization: [
+            "GTM Sportswear",
+            "Champion Teamwear",
+            "Hanesbrands",
+            "Unrivaled Teamwear",
         ],
-        stack: ["React", "TypeScript", ".NET MVC", "Pulse API", "Vite"],
+        period: "",
+        description:
+            "Advanced from technical product and production systems into enterprise software engineering through internal promotion while supporting the organization across multiple ownership transitions.",
+        roles: [
+            {
+                role: "Senior Application Developer",
+                company: "Unrivaled Teamwear",
+                period: "Nov 2024 — Present",
+                meta: "Enterprise Web Applications",
+                bullets: [
+                    "Supported the migration of the graphic engine and Pulse API to a new server, validating functionality across environments and helping ensure application continuity during infrastructure changes.",
+                    "Led a major checkout page refactor for Coach's Assistant, resolving payment-processing issues where payment methods could process twice or fail to create orders after payment was taken.",
+                    "Converted legacy .NET MVC frontend workflows to React and TypeScript to improve UI/UX, stabilize checkout behavior, and make the application easier to maintain.",
+                    "Contributed to modernization planning for transitioning legacy .NET MVC architecture toward updated .NET backend services and a Vite-powered frontend.",
+                ],
+                stack: [
+                    "React",
+                    "TypeScript",
+                    ".NET MVC",
+                    "Pulse API",
+                    "Vite",
+                ],
+            },
+            {
+                role: "Developer Applications III",
+                company: "Hanesbrands Inc.",
+                period: "Jun 2022 — Nov 2024",
+                meta: "Application Development",
+                bullets: [
+                    "Promoted into a dedicated software engineering role, building enterprise React applications supporting commerce, payments, and internal business operations.",
+                    "Implemented Adyen payment processing improvements for commerce workflows, supporting more reliable payment handling across enterprise application releases.",
+                    "Integrated payment, tax, and platform services across React applications, including Adyen, Shopify APIs, tax API implementations, G4, and Cookies plugin integrations.",
+                    "Implemented BDD and automated testing practices using Playwright and Jest to protect critical user flows and improve release confidence.",
+                ],
+                stack: [
+                    "React",
+                    "REST APIs",
+                    ".NET MVC",
+                    "Adyen",
+                    "Playwright",
+                ],
+            },
+            {
+                role: "Research & Development Coordinator",
+                company: "Champion Teamwear",
+                period: "May 2016 — Jun 2022",
+                meta: "Product + Process Innovation",
+                bullets: [
+                    "Led research and process improvement initiatives across product development, manufacturing workflows, and business operations.",
+                    "Designed and developed internal software solutions, workflow automation, and operational tools while partnering closely with software engineers and business stakeholders.",
+                    "Evaluated emerging technologies and process improvements that increased operational efficiency and helped shape future engineering initiatives.",
+                ],
+                stack: [
+                    "Process Improvement",
+                    "Internal Applications",
+                    "Workflow Automation",
+                    "Research",
+                ],
+            },
+            {
+                role: "Lead Technical Application Designer",
+                company: "GTM Sportswear / Champion Teamwear",
+                period: "Mar 2014 — May 2016",
+                meta: "Product + Production Systems",
+                bullets: [
+                    "Led a team of 8–13 members supporting 3D product preparation, customizable web-to-print artwork, and automated sublimated garment scaling for production.",
+                    "Managed workflows and project priorities across product setup, template art, and production-prep processes.",
+                    "Restructured the Art Approval process to improve production consistency and reduce turnaround time.",
+                    "Partnered with web development and marketing teams to implement new programs that expanded digital product and customization capabilities.",
+                    "Created training documentation and updated time-study references to support team growth and operational planning.",
+                ],
+                stack: [
+                    "Photoshop",
+                    "Illustrator",
+                    "Web-to-Print",
+                    "Production Workflows",
+                    "Process Improvement",
+                ],
+            },
+        ],
     },
     {
-        role: "Developer Applications III",
-        company: "Hanesbrands Inc.",
-        period: "Jun 2022 — Nov 2024",
-        meta: "Application Development",
-        bullets: [
-            "Implemented Adyen payment processing improvements for commerce workflows, supporting more reliable payment handling across enterprise application releases.",
-            "Integrated and supported payment, tax, and platform services across React applications, including Adyen, tax API implementations, Shopify API touchpoints, G4, and Cookies plugin work.",
-            "Developed enterprise React applications connected to REST APIs and .NET MVC-backed systems supporting internal operations and customer-facing commerce workflows.",
-            "Implemented BDD and automated testing practices with Playwright and Jest to protect critical user flows and improve release confidence.",
+        organization: ["Network Computer Solutions"],
+        period: "",
+        roles: [
+            {
+                role: "UI / UX Designer",
+                company: "Network Computer Solutions",
+                period: "Jan 2014 — Jan 2016",
+                meta: "Interface Design",
+                bullets: [
+                    "Designed responsive interfaces and user experiences for web applications with a focus on layout, clarity, usability, and visual hierarchy.",
+                    "Collaborated with developers to translate visual concepts, user flows, and interface decisions into production-ready experiences.",
+                ],
+                stack: [
+                    "UI Design",
+                    "UX Design",
+                    "Responsive Design",
+                ],
+            },
         ],
-        stack: ["React", "REST APIs", ".NET MVC", "Adyen", "Playwright"],
-    },
-    {
-        role: "Research & Development Coordinator",
-        company: "Champion Teamwear",
-        period: "May 2016 — Jun 2022",
-        meta: "Product + Process Innovation",
-        bullets: [
-            "Led research and process improvement initiatives across product development, manufacturing workflows, and internal business operations.",
-            "Evaluated emerging technologies and workflow opportunities to improve efficiency, documentation, and cross-department collaboration.",
-            "Partnered with software developers and business stakeholders to improve internal tools, operational processes, and application workflows.",
-        ],
-        stack: [
-            "Process Improvement",
-            "Product Development",
-            "Research",
-        ],
-    },
-    {
-        role: "UI / UX Designer",
-        company: "Network Computer Solutions",
-        period: "Jan 2014 — 2016",
-        meta: "Interface Design",
-        bullets: [
-            "Designed responsive interfaces and user experiences for web applications with a focus on layout, clarity, usability, and visual hierarchy.",
-            "Collaborated with developers to translate visual concepts, user flows, and interface decisions into production-ready experiences.",
-        ],
-        stack: ["UI Design", "UX Design", "Responsive Design"],
     },
 ];
 
