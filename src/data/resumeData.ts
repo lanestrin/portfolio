@@ -137,7 +137,7 @@ const expertise: Expertise[] = [
     {
         title: "Frontend Engineering",
         description:
-            "Build maintainable, responsive React and Next.js interfaces for complex enterprise workflows, focusing on component architecture, state management, and scalable UI patterns.",
+            "Design and ship maintainable React and Next.js interfaces for complex commerce and enterprise workflows, with clear component architecture, predictable state management, responsive behavior, and accessible UI patterns.",
         tools: [
             "React",
             "Next.js",
@@ -147,49 +147,40 @@ const expertise: Expertise[] = [
         ],
     },
     {
-        title: "API & Platform Integration",
+        title: "Commerce & API Integration",
         description:
-            "Connect frontend applications to commerce, payment, tax, Shopify, and .NET backend services.",
+            "Integrate frontend applications with payment, tax, Shopify, and .NET services, translating complex business rules into dependable customer and internal workflows.",
         tools: [
-            ".NET",
-            ".NET MVC",
             "REST APIs",
             "Adyen",
-            "Tax APIs",
             "Shopify API",
+            "Tax APIs",
+            ".NET",
+            ".NET MVC",
         ],
     },
     {
-        title: "Testing & Reliability",
+        title: "Frontend Testing Strategy",
         description:
-            "Protect critical user flows with automated testing and BDD practices.",
+            "Use focused unit and integration tests for fast-moving frontend code, with targeted browser automation in Cypress, Playwright, and Selenium to protect critical workflows and reduce regression risk.",
         tools: [
-            "Playwright",
             "Jest",
-            "BDD",
-            "Regression Testing",
+            "Cypress",
+            "Playwright",
+            "Selenium",
+            "Unit Testing",
+            "Integration Testing",
         ],
     },
     {
-        title: "Delivery Workflow",
+        title: "Production Delivery",
         description:
-            "Experience with Azure DevOps, Git, CI/CD pipelines, Agile planning, and production releases.",
+            "Ship production releases through Azure DevOps, Git, and CI/CD, collaborating across product, design, QA, and engineering from planning through deployment.",
         tools: [
             "Azure DevOps",
             "Git",
             "CI/CD",
             "Agile Delivery",
-        ],
-    },
-    {
-        title: "Design-Informed Development",
-        description:
-            "Translate UX intent into production-ready interfaces with strong judgment around hierarchy, accessibility, and usability.",
-        tools: [
-            "Figma",
-            "UI Design",
-            "UX Design",
-            "Responsive Design",
         ],
     },
 ];
