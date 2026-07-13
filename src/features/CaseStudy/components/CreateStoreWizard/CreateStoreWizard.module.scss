@@ -1,0 +1,119 @@
+.wizardSection {
+    padding-block: clamp(4rem, 7vw, 7rem);
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-background);
+}
+
+.layout {
+    display: grid;
+    grid-template-columns:
+        minmax(14rem, 0.72fr)
+        minmax(0, 2.28fr);
+    gap: clamp(3rem, 6vw, 6.5rem);
+    align-items: center;
+}
+
+.content {
+    min-width: 0;
+    max-width: 20rem;
+}
+
+.eyebrow {
+    margin: 0 0 0.75rem;
+
+    color: var(--color-muted);
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.title {
+    max-width: 18rem;
+    margin: 0;
+
+    color: var(--color-primary);
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 800;
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+    text-transform: uppercase;
+}
+
+.description {
+    display: grid;
+    gap: 1rem;
+    margin-top: clamp(1.5rem, 2.5vw, 2rem);
+
+    p {
+        margin: 0;
+
+        color: var(--color-muted);
+        font-size: 0.78rem;
+        line-height: 1.7;
+    }
+}
+
+.preview {
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+
+    background: var(--color-background);
+    box-shadow: var(--shadow-md);
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+@media (max-width: 64rem) {
+    .layout {
+        grid-template-columns: 1fr;
+        gap: 2.75rem;
+        align-items: start;
+    }
+
+    .content {
+        max-width: 38rem;
+    }
+
+    .title {
+        max-width: 30rem;
+    }
+}
+
+@media (max-width: 40rem) {
+    .wizardSection {
+        padding-block: 3.5rem;
+    }
+
+    .layout {
+        gap: 2rem;
+    }
+
+    .title {
+        font-size: clamp(2rem, 10vw, 2.75rem);
+    }
+
+    .description p {
+        font-size: 0.82rem;
+    }
+
+    .preview {
+        overflow-x: auto;
+
+        img {
+            min-width: 42rem;
+        }
+    }
+}

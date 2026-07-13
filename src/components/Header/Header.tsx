@@ -36,12 +36,12 @@ const Header = () => {
                         </Link>
 
                         <a
-                            href="https://teamstore-neon.vercel.app/"
+                            href="/case-study"
                             target="_blank"
                             rel="noopener noreferrer"
                             className={styles.button}
                         >
-                            <span>View TeamStore</span>
+                            <span>View Case Study</span>
                             <FaArrowUpRightFromSquare aria-hidden="true" />
                         </a>
                     </nav>

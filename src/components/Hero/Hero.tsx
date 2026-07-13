@@ -136,10 +136,10 @@ const Hero = () => {
                             </a>
 
                             <a
-                                href="https://teamstore-neon.vercel.app/"
+                                href="/case-study"
                                 className={styles.secondaryButton}
                             >
-                                <span>View TeamStore</span>
+                                <span>View Case Study</span>
                                 <FaArrowUpRightFromSquare aria-hidden="true" />
                             </a>
                         </div>
