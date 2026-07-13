@@ -1,4 +1,4 @@
-import { FiArrowRight, FiExternalLink } from "react-icons/fi";
+import { FiExternalLink } from "react-icons/fi";
 
 import { images } from "../../../../assets/images";
 import styles from "./CaseStudyHero.module.scss";
