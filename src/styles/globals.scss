@@ -1,4 +1,4 @@
-/* ==========================================================================
+/* ========================================================================== 
    Design Tokens
    ========================================================================== */
 
@@ -14,6 +14,15 @@
     --color-background: #ffffff;
     --color-surface: #ffffff;
     --color-surface-soft: #f8fafc;
+
+    /* Status */
+    --color-success: #15803d;
+    --color-success-soft: #f0fdf4;
+    --color-success-border: #bbf7d0;
+
+    --color-progress: #2563eb;
+    --color-progress-soft: #eff6ff;
+    --color-progress-border: #bfdbfe;
 
     /* Transparent Colors */
     --color-primary-04: rgba(16, 37, 58, 0.04);
@@ -36,8 +45,10 @@
     --space-xs: 0.25rem;
     --space-sm: 0.5rem;
     --space-md: 1rem;
-    --space-lg: 2rem;
-    --space-xl: 4rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
 
     /* Radius */
     --radius-sm: 0.5rem;
@@ -47,20 +58,17 @@
     --radius-pill: 999px;
 
     /* Shadows */
-    --shadow-sm: 0 12px 28px rgba(16, 37, 58, 0.1);
-    --shadow-md: 0 18px 38px rgba(16, 37, 58, 0.14);
-    --shadow-lg: 0 24px 60px rgba(16, 37, 58, 0.16);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
 
     /* Layout */
     --header-height: 72px;
 
     /* Motion */
     --transition: 180ms ease;
+    --transition-slow: 450ms ease;
 }
-
-/* ==========================================================================
-   Reset
-   ========================================================================== */
 
 *,
 *::before,
@@ -76,26 +84,14 @@ html {
 body {
     margin: 0;
     min-width: 320px;
-
     background: var(--color-background);
     color: var(--color-text);
-
     font-family: var(--font-body);
     line-height: 1.6;
-
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 }
-
-body::selection {
-    color: #ffffff;
-    background: var(--color-primary);
-}
-
-/* ==========================================================================
-   Elements
-   ========================================================================== */
 
 img,
 svg {
@@ -139,10 +135,6 @@ h6 {
     margin: 0;
 }
 
-/* ==========================================================================
-   Accessibility
-   ========================================================================== */
-
 :focus-visible {
     outline: 3px solid rgba(16, 37, 58, 0.22);
     outline-offset: 3px;
@@ -158,10 +150,6 @@ h6 {
         animation-iteration-count: 1 !important;
     }
 }
-
-/* ==========================================================================
-   Selection
-   ========================================================================== */
 
 ::selection {
     color: #ffffff;

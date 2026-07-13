@@ -1,0 +1,208 @@
+.wizardProgress {
+    padding-block: clamp(2.5rem, 5vw, 4.5rem);
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-background);
+}
+
+.stepGrid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.stepCard {
+    position: relative;
+    min-width: 0;
+    min-height: 10rem;
+    padding: clamp(1.1rem, 1.6vw, 1.5rem);
+
+    border: 1px solid var(--color-border);
+    background: var(--color-background);
+
+    transition:
+        transform 220ms ease,
+        box-shadow 220ms ease,
+        border-color 220ms ease,
+        background-color 220ms ease;
+
+    /*
+     * Cards overlap borders so the row reads as one connected sequence.
+     */
+    & + & {
+        margin-left: -1px;
+    }
+
+    &:first-child {
+        border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+    }
+
+    &:last-child {
+        border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    &:hover {
+        z-index: 2;
+        transform: translateY(-0.3rem);
+        border-color: var(--color-primary);
+        box-shadow: var(--shadow-md);
+    }
+
+    h3 {
+        margin: 0.75rem 0 0;
+
+        color: var(--color-primary);
+        font-family: var(--font-heading);
+        font-size: 0.9rem;
+        font-weight: 800;
+        line-height: 1.25;
+    }
+
+    p {
+        max-width: 13rem;
+        margin: 0.6rem 0 0;
+
+        color: var(--color-muted);
+        font-size: 0.72rem;
+        line-height: 1.55;
+    }
+}
+
+.stepHeader {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.stepNumber {
+    color: var(--color-primary-22);
+    font-family: var(--font-heading);
+    font-size: 1.7rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.statusBadge {
+    flex-shrink: 0;
+    padding: 0.35rem 0.5rem;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+
+    background: var(--color-surface-soft);
+    color: var(--color-muted);
+
+    font-family: var(--font-heading);
+    font-size: 0.55rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+/* Complete steps */
+
+.complete {
+    .statusBadge {
+        border-color: var(--color-success-border);
+        background: var(--color-success-soft);
+        color: var(--color-success);
+    }
+
+    &:hover {
+        border-color: var(--color-success);
+    }
+}
+
+/* Current step */
+
+.active {
+    z-index: 1;
+    border-color: var(--color-progress-border);
+    background: var(--color-progress-soft);
+
+    .stepNumber {
+        color: var(--color-progress);
+    }
+
+    .statusBadge {
+        border-color: var(--color-progress-border);
+        background: var(--color-background);
+        color: var(--color-progress);
+    }
+
+    &:hover {
+        border-color: var(--color-progress);
+        background: var(--color-progress-soft);
+    }
+}
+
+/* Future steps */
+
+.upcoming {
+    background: var(--color-surface);
+
+    .statusBadge {
+        background: var(--color-surface-soft);
+        color: var(--color-muted);
+    }
+}
+
+.visuallyHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    margin: -1px;
+    padding: 0;
+
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+
+    border: 0;
+    white-space: nowrap;
+}
+
+@media (max-width: 64rem) {
+    .stepGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    .stepCard {
+        border-radius: var(--radius-sm);
+
+        & + & {
+            margin-left: 0;
+        }
+
+        &:first-child,
+        &:last-child {
+            border-radius: var(--radius-sm);
+        }
+    }
+}
+
+@media (max-width: 40rem) {
+    .stepGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .stepCard {
+        min-height: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stepCard {
+        transition: none;
+
+        &:hover {
+            transform: none;
+        }
+    }
+}
