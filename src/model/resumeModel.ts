@@ -7,6 +7,7 @@ export interface Profile {
         phone: string;
         phoneHref: string;
         location: string;
+        portfolio?: string;
         github: string;
         linkedin: string;
     };

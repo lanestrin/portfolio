@@ -1,8 +1,5 @@
-import { HiArrowLongRight } from "react-icons/hi2";
-
 import { resumeData } from "../../data/resumeData";
 import styles from "./ResumePrint.module.scss";
-import { useEffect } from "react";
 
 const getOrganizationLabel = (organization: string[]) => {
     return organization.length > 1
@@ -12,41 +9,20 @@ const getOrganizationLabel = (organization: string[]) => {
 
 const ResumePrint = () => {
     const { profile, experience, expertise, education } = resumeData;
-    let hasTriggeredResumePrint = false;
+    const handlePrint = () => { window.print()};
 
-    useEffect(() => {
-        const searchParams = new URLSearchParams(window.location.search);
-        const shouldPrint = searchParams.get("print") === "1";
-
-        if (!shouldPrint || hasTriggeredResumePrint) {
-            return;
-        }
-
-        hasTriggeredResumePrint = true;
-
-        const triggerPrint = async () => {
-            if ("fonts" in document) {
-                await document.fonts.ready;
-            }
-
-            window.requestAnimationFrame(() => {
-                window.requestAnimationFrame(() => {
-                    window.print();
-
-                    window.history.replaceState(
-                        null,
-                        document.title,
-                        window.location.pathname
-                    );
-                });
-            });
-        };
-
-        void triggerPrint();
-    }, []);
 
     return (
         <main className={styles.resumePrint}>
+            <div className={styles.printToolbar}>
+                <button
+                    type="button"
+                    className={styles.printButton}
+                    onClick={handlePrint}
+                >
+                    Download Resume
+                </button>
+            </div>
             <section className={styles.page}>
                 <header className={styles.header}>
                     <div>
@@ -66,14 +42,12 @@ const ResumePrint = () => {
                             {profile.contact.phone}
                         </a>
 
-                        <span>{profile.contact.location}</span>
-
                         <a
-                            href={profile.contact.linkedin}
+                            href={profile.contact.portfolio}
                             target="_blank"
                             rel="noreferrer"
                         >
-                            linkedin.com/in/lanestrin
+                            lan-nguyen-dev.vercel.app
                         </a>
 
                         <a
@@ -133,15 +107,9 @@ const ResumePrint = () => {
                                                         <li key={company}>
                                                             <span>{company}</span>
 
-                                                            {index <
-                                                                career.organization.length -
-                                                                    1 && (
-                                                                <HiArrowLongRight
-                                                                    className={
-                                                                        styles.transitionIcon
-                                                                    }
-                                                                />
-                                                            )}
+                                                            {index < career.organization.length - 1 && (
+                                                                <span className={styles.transitionIcon} aria-hidden="true"> → </span>
+                                                                )}
                                                         </li>
                                                     )
                                                 )}
