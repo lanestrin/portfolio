@@ -22,7 +22,7 @@ const profile: Profile = {
     },
 };
 
-const experience: Experience[] = [
+export const experience: Experience[] = [
     {
         organization: [
             "GTM Sportswear",
@@ -32,7 +32,7 @@ const experience: Experience[] = [
         ],
         period: "",
         description:
-            "Advanced from technical product and production systems into enterprise software engineering through internal promotion while supporting the organization across multiple ownership transitions.",
+            "Continuous employment through multiple acquisitions and ownership transitions. Promoted through increasingly technical roles, from product systems and workflow automation into frontend application development and senior engineering responsibilities.",
         roles: [
             {
                 role: "Senior Application Developer",
@@ -40,28 +40,21 @@ const experience: Experience[] = [
                 period: "Nov 2024 — Present",
                 meta: "Enterprise Web Applications",
                 bullets: [
-                    "Led critical modernization and stability initiatives across enterprise sales, checkout, graphics, and order-processing applications built with React, TypeScript, .NET MVC, and backend APIs.",
-                    "Developed and maintained Azure DevOps pipelines supporting the migration of the graphic engine and Pulse API to new server infrastructure, including environment configuration, deployment validation, and post-migration testing.",
-                    "Led a major refactor of the Coach's Assistant checkout workflow, resolving payment defects that caused duplicate transactions or accepted payments without successfully creating corresponding orders.",
-                    "Modernized legacy .NET MVC workflows by rebuilding frontend functionality in React and TypeScript, improving user experience, application reliability, and long-term maintainability.",
-                    "Re-architected significant portions of the Sales Order Entry application using React Context and improved state-management patterns, reducing fragmented component state and creating a more scalable foundation for future development.",
-                    "Contributed to the architectural strategy for transitioning legacy .NET MVC applications toward modern .NET backend services and Vite-powered React frontends.",
-                    "Mentored senior engineering peers on scalable application architecture, separation of concerns, and effective frontend state-management practices, strengthening technical decision-making across the team.",
+                    "Promoted to Senior Application Developer, taking broader ownership of frontend architecture, application stability, and modernization across enterprise sales, checkout, graphics, and order-processing systems.",
+                    "Led a React and TypeScript refactor of the Coach's Assistant checkout workflow, resolving defects that could create duplicate transactions or accept payment without successfully creating an order.",
+                    "Modernized legacy .NET MVC workflows by rebuilding frontend functionality in React and TypeScript while supporting C# and .NET backend services.",
+                    "Re-architected significant portions of the Sales Order Entry application with React Context and improved state-management patterns, reducing fragmented component state and creating a more maintainable foundation.",
+                    "Contributed to the transition from legacy .NET MVC applications toward modern .NET services and Vite-powered React frontends, including deployment and environment validation through Azure DevOps.",
                 ],
                 stack: [
                     "React",
                     "TypeScript",
                     "React Context",
-                    ".NET MVC",
+                    "C#",
                     ".NET",
-                    "Azure DevOps",
-                    "Azure Pipelines",
-                    "Pulse API",
-                    "Shopify API",
-                    "Adyen",
-                    "Playwright",
+                    ".NET MVC",
                     "Vite",
-                    "C#"
+                    "Azure DevOps",
                 ],
             },
             {
@@ -70,25 +63,22 @@ const experience: Experience[] = [
                 period: "Jun 2022 — Nov 2024",
                 meta: "Application Development",
                 bullets: [
-                    "Promoted into a dedicated software engineering role, building and maintaining enterprise React applications supporting commerce, payments, sales operations, and internal business workflows.",
-                    "Owned the end-to-end design and development of the Sales Order Entry application, creating wireframes and UI mockups for stakeholder approval before implementing approved workflows in React.",
-                    "Served as the primary UI/UX contributor for the Sales Order Entry tool, translating business requirements into practical interfaces without support from a dedicated design team.",
-                    "Implemented Adyen payment-processing improvements across commerce workflows, strengthening payment reliability and supporting safer enterprise application releases.",
-                    "Integrated payment, tax, commerce, analytics, and consent-management services across React applications, including Adyen, Shopify APIs, tax APIs, G4, and cookie-management plugins.",
-                    "Introduced and expanded BDD and automated testing practices using Playwright and Jest, protecting critical user flows and increasing confidence in application releases.",
-                    "Trained and supported two senior developers on the infrastructure, architecture, dependencies, and operational workflows of the enterprise applications the team maintained.",
-                    "Collaborated with business stakeholders and engineering teams throughout requirements gathering, design approval, development, testing, and production delivery.",
+                    "Promoted from Research & Development Coordinator into a dedicated application development role, building production React applications for commerce, payments, sales operations, and internal workflows.",
+                    "Owned the frontend design and development of the Sales Order Entry application, translating business requirements and approved wireframes into production React interfaces.",
+                    "Built React applications connected to REST APIs and C#/.NET MVC services, supporting customer-facing commerce and internal business operations.",
+                    "Implemented Adyen payment improvements and integrated Shopify, tax, analytics, and consent-management services across enterprise applications.",
+                    "Introduced and expanded automated testing with Playwright and Jest, protecting critical user workflows and increasing release confidence.",
                 ],
                 stack: [
                     "React",
-                    "Typescript",
+                    "TypeScript",
+                    "C#",
+                    ".NET MVC",
                     "REST APIs",
                     "Adyen",
+                    "Shopify API",
                     "Playwright",
                     "Jest",
-                    "Unit Testing",
-                    "Integration Testing",
-                    "UI/UX Design",
                 ],
             },
             {
@@ -97,22 +87,16 @@ const experience: Experience[] = [
                 period: "May 2016 — Jun 2022",
                 meta: "Product + Process Innovation",
                 bullets: [
-                    "Planned and executed the migration of company image assets and web-to-print workflows from Adobe Scene7 to the Pulse Graphics Engine before Scene7's web-to-print functionality reached end of life.",
-                    "Developed Adobe Illustrator automation scripts that cleaned layer structures, consolidated color layers, and prepared artwork for production in minutes.",
-                    "Automated product-scaling workflows and the creation of thousands of templates required to support production and the transition to a new imaging platform.",
-                    "Managed the department's production-software budget, upgrades, and licensing needs, coordinating with vendors to procure licenses and with IT to deploy and maintain the software.",
-                    "Partnered with art, technical application, engineering, IT, and business teams to identify workflow bottlenecks and implement scalable production tools and process improvements.",
+                    "Planned and executed the migration of company image assets and web-to-print workflows from Adobe Scene7 to the Pulse Graphics Engine before the platform's web-to-print functionality reached end of life.",
+                    "Developed Adobe Illustrator automation that cleaned artwork, consolidated color layers, prepared production files, and reduced manual production work from lengthy processes to minutes.",
+                    "Automated product-scaling workflows and the creation of thousands of templates while partnering with engineering, IT, and business teams to improve internal systems and operational processes.",
                 ],
                 stack: [
+                    "Workflow Automation",
+                    "Adobe Illustrator",
                     "Adobe Scene7",
-                    "Photoshop",
-                    "Illustrator",  
                     "Pulse Graphics Engine",
                     "PowerShell",
-                    "Illustrator Automation",
-                    "Workflow Automation",
-                    "Software Licensing",
-                    "Vendor Management",
                 ],
             },
             {
@@ -121,17 +105,15 @@ const experience: Experience[] = [
                 period: "Mar 2014 — May 2016",
                 meta: "Product + Production Systems",
                 bullets: [
-                    "Led a team of 8–13 members supporting 3D product preparation, customizable web-to-print artwork, template development, and automated sublimated garment scaling for production.",
-                    "Planned team workloads, assigned priorities, and coordinated production deadlines across multiple sections of work.",
-                    "Trained team members and developed section leads to manage specialized workflows, maintain quality standards, and support day-to-day production needs.",
-                    "Created training documentation, process guides, and updated time-study references to improve onboarding, workflow consistency, and operational planning.",
-                    "Partnered with marketing and web development teams to plan and launch new programs that expanded digital product and customization capabilities.",
-                    "Restructured the Art Approval process to improve production consistency and reduce turnaround time.",
+                    "Led a team of 8–13 members supporting customizable web-to-print artwork, template development, 3D product preparation, and automated garment-scaling workflows.",
+                    "Partnered with marketing and web development teams to launch digital customization programs and improve production workflows, documentation, and turnaround time.",
                 ],
                 stack: [
-                    "Adobe Scene7",
+                    "Web-to-Print",
+                    "Workflow Automation",
                     "Photoshop",
-                    "Illustrator",                
+                    "Illustrator",
+                    "Team Leadership",
                 ],
             },
         ],
@@ -141,23 +123,19 @@ const experience: Experience[] = [
         period: "",
         roles: [
             {
-                role: "UI/UX & Brand Designer",
+                role: "UI / UX Designer",
                 company: "Network Computer Solutions",
                 period: "Jan 2014 — Jan 2016",
-                meta: "Brand + Interface Design",
+                meta: "Interface Design",
                 bullets: [
-                    "Led the company rebrand by creating a new visual identity across logos, banners, business cards, marketing materials, and digital assets.",
-                    "Designed and maintained the company website, including its responsive layout, visual hierarchy, navigation, and overall user experience.",
-                    "Created UI and UX designs for new and evolving software applications introduced by the company over time.",
-                    "Collaborated with developers and business stakeholders to translate branding requirements, user flows, and interface concepts into production-ready experiences.",
+                    "Designed and maintained the company's responsive website, including layout, navigation, visual hierarchy, and overall user experience.",
+                    "Created UI/UX concepts for software applications and collaborated with developers and business stakeholders to translate interface requirements into production-ready experiences.",
                 ],
                 stack: [
-                    "Brand Identity",
                     "UI Design",
                     "UX Design",
-                    "Web Design",
                     "Responsive Design",
-                    "Print Design",
+                    "Web Design",
                 ],
             },
         ],
@@ -166,52 +144,80 @@ const experience: Experience[] = [
 
 const expertise: Expertise[] = [
     {
-        title: "Frontend Engineering",
+        title: "Languages",
         description:
-            "Design and ship maintainable React and Next.js interfaces for complex commerce and enterprise workflows, with clear component architecture, predictable state management, responsive behavior, and accessible UI patterns.",
+            "Build production web applications with strongly typed frontend and backend code, semantic markup, and maintainable styling systems.",
         tools: [
-            "React",
-            "Next.js",
             "TypeScript",
-            "React Query",
+            "JavaScript",
+            "C#",
+            "HTML",
+            "CSS",
             "SCSS",
         ],
     },
     {
-        title: "Commerce & API Integration",
+        title: "Frontend",
         description:
-            "Integrate frontend applications with payment, tax, Shopify, and .NET services, translating complex business rules into dependable customer and internal workflows.",
+            "Design and ship maintainable interfaces for complex commerce and enterprise workflows with reusable architecture, predictable state, responsive behavior, and accessible UI patterns.",
         tools: [
-            "REST APIs",
-            "Adyen",
-            "Shopify API",
-            "Tax APIs",
-            ".NET",
-            ".NET MVC",
+            "React",
+            "Next.js",
+            "React Query",
+            "React Context",
+            "Vite",
+            "Responsive Design",
+            "Accessibility",
         ],
     },
     {
-        title: "Frontend Testing Strategy",
+        title: "Backend & APIs",
         description:
-            "Use focused unit and integration tests for fast-moving frontend code, with targeted browser automation in Cypress, Playwright, and Selenium to protect critical workflows and reduce regression risk.",
+            "Support frontend applications with C# and .NET services, REST integrations, and Convex-backed data and authentication workflows.",
         tools: [
+            "C#",
+            ".NET",
+            ".NET MVC",
+            "REST APIs",
+            "Convex",
+        ],
+    },
+    {
+        title: "Testing",
+        description:
+            "Use unit, integration, and browser automation to protect critical user workflows and reduce regression risk across fast-moving applications.",
+        tools: [
+            "Playwright",
             "Jest",
             "Cypress",
-            "Playwright",
             "Selenium",
             "Unit Testing",
             "Integration Testing",
         ],
     },
     {
-        title: "Production Delivery",
+        title: "Commerce & Integrations",
         description:
-            "Ship production releases through Azure DevOps, Git, and CI/CD, collaborating across product, design, QA, and engineering from planning through deployment.",
+            "Implement payment, commerce, tax, and analytics integrations that translate complex business rules into dependable customer and internal workflows.",
+        tools: [
+            "Adyen",
+            "Shopify API",
+            "Tax APIs",
+            "GA4",
+        ],
+    },
+    {
+        title: "Delivery & Automation",
+        description:
+            "Ship and support production applications through cloud deployment, CI/CD pipelines, source control, scripting, and cross-functional delivery practices.",
         tools: [
             "Azure DevOps",
+            "Azure Pipelines",
+            "Vercel",
+            "PowerShell",
             "Git",
             "CI/CD",
-            "Agile Delivery",
+            "Agile",
         ],
     },
 ];
