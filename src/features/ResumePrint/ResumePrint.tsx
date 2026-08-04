@@ -1,4 +1,4 @@
-import { resumeData } from "../../data/resumeData";
+import { education, experience, profile, technicalSkills } from "../../data";
 import styles from "./ResumePrint.module.scss";
 
 const getOrganizationLabel = (organization: string[]) => {
@@ -7,58 +7,7 @@ const getOrganizationLabel = (organization: string[]) => {
     : "Early Interface Design";
 };
 
-const technicalSkills = [
-  {
-    label: "Languages",
-    skills: ["TypeScript", "JavaScript", "C#", "HTML", "CSS", "SCSS"],
-  },
-  {
-    label: "Frontend",
-    skills: [
-      "React",
-      "Next.js",
-      "React Query",
-      "React Context",
-      "Vite",
-      "Responsive Design",
-      "Accessibility",
-    ],
-  },
-  {
-    label: "Backend & APIs",
-    skills: [".NET", ".NET MVC", "REST APIs"],
-  },
-  {
-    label: "Testing",
-    skills: [
-      "Playwright",
-      "Jest",
-      "Cypress",
-      "Selenium",
-      "Unit Testing",
-      "Integration Testing",
-    ],
-  },
-  {
-    label: "Commerce & Integrations",
-    skills: ["Adyen", "Shopify API", "Tax APIs", "Google Analytics 4"],
-  },
-  {
-    label: "Delivery",
-    skills: [
-      "Azure DevOps",
-      "Azure Pipelines",
-      "Vercel",
-      "PowerShell",
-      "Git",
-      "CI/CD",
-      "Agile",
-    ],
-  },
-];
-
 const ResumePrint = () => {
-  const { profile, experience, education } = resumeData;
   const handlePrint = () => {
     window.print();
   };
@@ -121,13 +70,13 @@ const ResumePrint = () => {
           </div>
 
           <div className={styles.skillGroups} aria-label="Technical skills">
-            {technicalSkills.map(({ label, skills }) => (
-              <div key={label} className={styles.skillGroup}>
-                <h3 className={styles.skillLabel}>{label}</h3>
+            {technicalSkills.map(({ title, tools }) => (
+              <div key={title} className={styles.skillGroup}>
+                <h3 className={styles.skillLabel}>{title}</h3>
 
-                <ul className={styles.skillTags} aria-label={`${label} skills`}>
-                  {skills.map((skill) => (
-                    <li key={skill}>{skill}</li>
+                <ul className={styles.skillTags} aria-label={`${title} skills`}>
+                  {tools.map((tool) => (
+                    <li key={tool}>{tool}</li>
                   ))}
                 </ul>
               </div>

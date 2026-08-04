@@ -1,5 +1,5 @@
+import { technicalSkills } from "../../data";
 import styles from "./TechnicalSkills.module.scss";
-import { resumeData } from "../../data/resumeData";
 
 const TechnicalSkills = () => {
   return (
@@ -24,7 +24,7 @@ const TechnicalSkills = () => {
           className={styles.skillGroups}
           aria-label="Technical skills by category"
         >
-          {resumeData.expertise.map((area) => (
+          {technicalSkills.map((area) => (
             <article key={area.title} className={styles.skillGroup}>
               <h3 className={styles.skillLabel}>{area.title}</h3>
 

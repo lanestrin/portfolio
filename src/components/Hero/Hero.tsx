@@ -9,23 +9,23 @@ import {
 } from "react-icons/fa6";
 import { SiNextdotjs, SiReact, SiSass, SiTypescript } from "react-icons/si";
 
+import { profile } from "../../data";
 import styles from "./Hero.module.scss";
-import { resumeData } from "../../data/resumeData";
 
 const socialLinks = [
   {
     label: "LinkedIn",
-    href: resumeData.profile.contact.linkedin,
+    href: profile.contact.linkedin,
     icon: FaLinkedinIn,
   },
   {
     label: "GitHub",
-    href: resumeData.profile.contact.github,
+    href: profile.contact.github,
     icon: FaGithub,
   },
   {
     label: "Email",
-    href: `mailto:${resumeData.profile.contact.email}`,
+    href: `mailto:${profile.contact.email}`,
     icon: FaEnvelope,
   },
 ];
@@ -33,31 +33,31 @@ const socialLinks = [
 const contactItems = [
   {
     label: "Email",
-    value: resumeData.profile.contact.email,
-    href: `mailto:${resumeData.profile.contact.email}`,
+    value: profile.contact.email,
+    href: `mailto:${profile.contact.email}`,
     icon: FaEnvelope,
   },
   {
     label: "Phone",
-    value: resumeData.profile.contact.phone,
-    href: resumeData.profile.contact.phoneHref,
+    value: profile.contact.phone,
+    href: profile.contact.phoneHref,
     icon: FaPhone,
   },
   {
     label: "Location",
-    value: resumeData.profile.contact.location,
+    value: profile.contact.location,
     icon: FaLocationDot,
   },
   {
     label: "LinkedIn",
     value: "linkedin.com/in/lanestrin",
-    href: resumeData.profile.contact.linkedin,
+    href: profile.contact.linkedin,
     icon: FaLinkedinIn,
   },
   {
     label: "GitHub",
     value: "github.com/lanestrin",
-    href: resumeData.profile.contact.github,
+    href: profile.contact.github,
     icon: FaGithub,
   },
 ];
@@ -98,13 +98,11 @@ const Hero = () => {
           <div className={styles.left}>
             <p className={styles.eyebrow}>Portfolio / Resume</p>
 
-            <h1 className={styles.name}>
-              {resumeData.profile.name.toUpperCase()}
-            </h1>
+            <h1 className={styles.name}>{profile.name.toUpperCase()}</h1>
 
-            <p className={styles.title}>{resumeData.profile.title}</p>
+            <p className={styles.title}>{profile.title}</p>
 
-            <p className={styles.summary}>{resumeData.profile.summary}</p>
+            <p className={styles.summary}>{profile.summary}</p>
 
             <div className={styles.actions}>
               <a href="/case-study" className={styles.primaryButton}>
@@ -118,8 +116,8 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 className={styles.secondaryButton}
               >
+                <span>View Resume</span>
                 <FaDownload aria-hidden="true" />
-                <span>Download Resume</span>
               </a>
             </div>
           </div>
