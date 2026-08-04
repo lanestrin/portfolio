@@ -1,6 +1,6 @@
 import { HiArrowLongRight } from "react-icons/hi2";
 
-import { resumeData } from "../../data/resumeData";
+import { experience } from "../../data";
 import styles from "./Experience.module.scss";
 
 const getEndYearMarker = (period: string) => {
@@ -38,7 +38,7 @@ const Experience = () => {
         </div>
 
         <div className={styles.timeline}>
-          {resumeData.experience.map((career, careerIndex) => (
+          {experience.map((career, careerIndex) => (
             <div
               key={career.organization.join("-")}
               className={styles.organization}

@@ -1,26 +1,17 @@
-import type {
-    Profile,
-    Experience,
-    Expertise,
-    Education,
-    Certification,
-} from "../model/resumeModel";
+export interface Role {
+    role: string;
+    company: string;
+    period: string;
+    meta: string;
+    bullets: string[];
+    stack: string[];
+}
 
-const profile: Profile = {
-    name: "Lan Nguyen",
-    title: "Senior Frontend Engineer",
-    summary:
-        "Frontend-focused software engineer building enterprise web applications with React, Next.js, TypeScript, and modern frontend systems. My design background helps me turn complex workflows into scalable, maintainable, and polished user experiences.",
-    contact: {
-        email: "ln.nguy3n@gmail.com",
-        phone: "(913) 205-7926",
-        phoneHref: "tel:+19132057926",
-        location: "Olathe, Kansas",
-        portfolio: "https://lan-nguyen-dev.vercel.app",
-        github: "https://github.com/lanestrin",
-        linkedin: "https://linkedin.com/in/lanestrin",
-    },
-};
+export interface Experience {
+    organization: string[];
+    description?: string;
+    roles: Role[];
+}
 
 export const experience: Experience[] = [
     {
@@ -30,7 +21,6 @@ export const experience: Experience[] = [
             "Hanesbrands",
             "Unrivaled Teamwear",
         ],
-        period: "",
         description:
             "Continuous employment through multiple acquisitions and ownership transitions. Promoted through increasingly technical roles, from product systems and workflow automation into frontend application development and senior engineering responsibilities.",
         roles: [
@@ -120,7 +110,6 @@ export const experience: Experience[] = [
     },
     {
         organization: ["Network Computer Solutions"],
-        period: "",
         roles: [
             {
                 role: "UI / UX Designer",
@@ -141,133 +130,3 @@ export const experience: Experience[] = [
         ],
     },
 ];
-
-const expertise: Expertise[] = [
-    {
-        title: "Languages",
-        description:
-            "Build production web applications with strongly typed frontend and backend code, semantic markup, and maintainable styling systems.",
-        tools: [
-            "TypeScript",
-            "JavaScript",
-            "C#",
-            "HTML",
-            "CSS",
-            "SCSS",
-        ],
-    },
-    {
-        title: "Frontend",
-        description:
-            "Design and ship maintainable interfaces for complex commerce and enterprise workflows with reusable architecture, predictable state, responsive behavior, and accessible UI patterns.",
-        tools: [
-            "React",
-            "Next.js",
-            "React Query",
-            "React Context",
-            "Vite",
-            "Responsive Design",
-            "Accessibility",
-        ],
-    },
-    {
-        title: "Backend & APIs",
-        description:
-            "Support frontend applications with C# and .NET services, REST integrations, and Convex-backed data and authentication workflows.",
-        tools: [
-            "C#",
-            ".NET",
-            ".NET MVC",
-            "REST APIs",
-            "Convex",
-        ],
-    },
-    {
-        title: "Testing",
-        description:
-            "Use unit, integration, and browser automation to protect critical user workflows and reduce regression risk across fast-moving applications.",
-        tools: [
-            "Playwright",
-            "Jest",
-            "Cypress",
-            "Selenium",
-            "Unit Testing",
-            "Integration Testing",
-        ],
-    },
-    {
-        title: "Commerce & Integrations",
-        description:
-            "Implement payment, commerce, tax, and analytics integrations that translate complex business rules into dependable customer and internal workflows.",
-        tools: [
-            "Adyen",
-            "Shopify API",
-            "Tax APIs",
-            "GA4",
-        ],
-    },
-    {
-        title: "Delivery & Automation",
-        description:
-            "Ship and support production applications through cloud deployment, CI/CD pipelines, source control, scripting, and cross-functional delivery practices.",
-        tools: [
-            "Azure DevOps",
-            "Azure Pipelines",
-            "Vercel",
-            "PowerShell",
-            "Git",
-            "CI/CD",
-            "Agile",
-        ],
-    },
-];
-
-const education: Education[] = [
-    {
-        school: "Kansas State University",
-        degree: "Bachelor of Fine Arts",
-        period: "2004 — 2009",
-        focus: "Visual Communication / Graphic Design",
-        description:
-            "Formal design foundation in visual communication, typography, layout, brand systems, and user-centered presentation.",
-    },
-    {
-        school: "Kansas City Kansas Community College",
-        degree: "Associate of Applied Science",
-        period: "2002 — 2004",
-        focus: "Computer Aided Drafting",
-        description:
-            "Technical drafting background that strengthened precision, systems thinking, documentation, and detail-oriented production work.",
-    },
-];
-
-const certifications: Certification[] = [
-    {
-        title: "Software Architecture & Technology of Large-Scale Systems",
-        provider: "Udemy",
-        category: "Architecture",
-    },
-    {
-        title: "Software Architecture Security",
-        provider: "Udemy",
-        category: "Security",
-    },
-    {
-        title: "Advanced React",
-        provider: "Udemy",
-        category: "Frontend",
-    },
-    {
-        title: "Next.js",
-        provider: "Udemy",
-        category: "Frontend",
-    },
-];
-
-export const resumeData = {
-    profile,
-    experience,
-    expertise,
-    education,
-    certifications,
-};
