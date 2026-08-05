@@ -44,10 +44,6 @@ const ResumePrint = () => {
               linkedin.com/in/lanestrin
             </a>
 
-            <a href={profile.contact.github} target="_blank" rel="noreferrer">
-              github.com/lanestrin
-            </a>
-
             <a
               href={profile.contact.portfolio}
               target="_blank"
