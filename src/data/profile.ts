@@ -15,9 +15,9 @@ export interface Profile {
 
 export const profile: Profile = {
     name: "Lan Nguyen",
-    title: "Senior Frontend Engineer",
+    title: "Senior Software Developer",
     summary:
-        "Frontend-focused software engineer building enterprise web applications with React, Next.js, TypeScript, and modern frontend systems. My design background helps me turn complex workflows into scalable, maintainable, and polished user experiences.",
+        "Frontend-focused software developer building enterprise web applications with React, Next.js, TypeScript, C#/.NET, and REST APIs. I use my design background to turn complex workflows into clear, reliable, and maintainable user experiences.",
     contact: {
         email: "ln.nguy3n@gmail.com",
         phone: "(913) 205-7926",

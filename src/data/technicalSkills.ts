@@ -48,6 +48,8 @@ export const technicalSkills: TechnicalSkill[] = [
             "C#",
             ".NET",
             ".NET MVC",
+            "Node.js",
+            "Express.js",
             "REST APIs",
             "Convex",
         ],

@@ -418,12 +418,17 @@
     .resumePrint {
         min-height: auto;
         padding: 0;
-        background: white;
+        background: #ffffff;
     }
 
     .page {
-        width: auto;
-        min-height: auto;
+        box-sizing: border-box;
+
+        width: 8.5in;
+        min-height: 11in;
+        margin: 0;
+        padding: 0.5in;
+
         box-shadow: none;
     }
 
@@ -431,33 +436,72 @@
         display: block;
     }
 
+    /*
+     * Keep section and organization headings with the content
+     * that immediately follows them.
+     */
     .sectionTitle,
-    .organizationHeader,
-    .jobHeader {
-        break-after: avoid;
+    .organizationHeader {
+        break-inside: avoid-page;
+        page-break-inside: avoid;
+
+        break-after: avoid-page;
         page-break-after: avoid;
     }
 
+    /*
+     * Allow long organizations and jobs to continue across pages.
+     */
     .organizationIntro,
     .job {
         break-inside: auto;
         page-break-inside: auto;
     }
 
-    .job ul {
+    /*
+     * Keep the job title, company/meta line, and date together.
+     */
+    .jobHeader {
+        break-inside: avoid-page !important;
+        page-break-inside: avoid !important;
+
+        break-after: avoid-page;
+        page-break-after: avoid;
+    }
+
+    /*
+     * Prevent a page break between the job header
+     * and the beginning of its bullet list.
+     */
+    .jobHeader + ul {
+        break-before: avoid-page;
+        page-break-before: avoid;
+
         break-inside: auto;
         page-break-inside: auto;
+
         orphans: 2;
         widows: 2;
     }
 
+    /*
+     * Keep the first bullet with the job header when possible.
+     */
+    .jobHeader + ul > li:first-child {
+        break-before: avoid-page;
+        page-break-before: avoid;
+    }
+
+    /*
+     * Individual bullets should not split across pages.
+     */
     .job li {
-        break-inside: avoid;
+        break-inside: avoid-page;
         page-break-inside: avoid;
     }
 
     .tags {
-        break-inside: avoid;
+        break-inside: avoid-page;
         page-break-inside: avoid;
     }
 
@@ -468,6 +512,11 @@
 
     .skillLabel {
         background: var(--color-primary) !important;
-        color: #fff !important;
+        color: #ffffff !important;
     }
+}
+
+@page {
+    size: letter;
+    margin: 0;
 }
