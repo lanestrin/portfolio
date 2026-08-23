@@ -3,7 +3,7 @@ import { FiExternalLink } from "react-icons/fi";
 import { images } from "../../../../assets/images";
 import styles from "./CaseStudyHero.module.scss";
 
-const TEAMSTORE_URL = "https://teamstore-neon.vercel.app/demo";
+const TEAMSTORE_URL = "https://teamstore-neon.vercel.app";
 
 export default function CaseStudyHero() {
   return (
