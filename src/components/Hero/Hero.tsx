@@ -1,11 +1,11 @@
 import {
-  FaArrowUpRightFromSquare,
-  FaDownload,
-  FaEnvelope,
-  FaGithub,
-  FaLinkedinIn,
-  FaLocationDot,
-  FaPhone,
+	FaArrowUpRightFromSquare,
+	FaDownload,
+	FaEnvelope,
+	FaGithub,
+	FaLinkedinIn,
+	FaLocationDot,
+	FaPhone,
 } from "react-icons/fa6";
 import { SiNextdotjs, SiReact, SiSass, SiTypescript } from "react-icons/si";
 
@@ -13,170 +13,150 @@ import { profile } from "../../data";
 import styles from "./Hero.module.scss";
 
 const socialLinks = [
-  {
-    label: "LinkedIn",
-    href: profile.contact.linkedin,
-    icon: FaLinkedinIn,
-  },
-  {
-    label: "GitHub",
-    href: profile.contact.github,
-    icon: FaGithub,
-  },
-  {
-    label: "Email",
-    href: `mailto:${profile.contact.email}`,
-    icon: FaEnvelope,
-  },
+	{ label: "LinkedIn", href: profile.contact.linkedin, icon: FaLinkedinIn },
+	{ label: "GitHub", href: profile.contact.github, icon: FaGithub },
+	{ label: "Email", href: `mailto:${profile.contact.email}`, icon: FaEnvelope },
 ];
 
 const contactItems = [
-  {
-    label: "Email",
-    value: profile.contact.email,
-    href: `mailto:${profile.contact.email}`,
-    icon: FaEnvelope,
-  },
-  {
-    label: "Phone",
-    value: profile.contact.phone,
-    href: profile.contact.phoneHref,
-    icon: FaPhone,
-  },
-  {
-    label: "Location",
-    value: profile.contact.location,
-    icon: FaLocationDot,
-  },
-  {
-    label: "LinkedIn",
-    value: "linkedin.com/in/lanestrin",
-    href: profile.contact.linkedin,
-    icon: FaLinkedinIn,
-  },
-  {
-    label: "GitHub",
-    value: "github.com/lanestrin",
-    href: profile.contact.github,
-    icon: FaGithub,
-  },
+	{
+		label: "Email",
+		value: profile.contact.email,
+		href: `mailto:${profile.contact.email}`,
+		icon: FaEnvelope,
+	},
+	{ label: "Phone", value: profile.contact.phone, href: profile.contact.phoneHref, icon: FaPhone },
+	{ label: "Location", value: profile.contact.location, icon: FaLocationDot },
+	{
+		label: "LinkedIn",
+		value: "linkedin.com/in/lanestrin",
+		href: profile.contact.linkedin,
+		icon: FaLinkedinIn,
+	},
+	{ label: "GitHub", value: "github.com/lanestrin", href: profile.contact.github, icon: FaGithub },
 ];
 
 const techItems = [
-  { label: "React", icon: SiReact },
-  { label: "Next.js", icon: SiNextdotjs },
-  { label: "TypeScript", icon: SiTypescript },
-  { label: "SCSS", icon: SiSass },
+	{ label: "React", icon: SiReact },
+	{ label: "Next.js", icon: SiNextdotjs },
+	{ label: "TypeScript", icon: SiTypescript },
+	{ label: "SCSS", icon: SiSass },
 ];
 
 const Hero = () => {
-  return (
-    <section className={styles.hero}>
-      <div className="container">
-        <div className={styles.content}>
-          <aside className={styles.socialRail} aria-label="Social links">
-            <span className={styles.railLabel}>Connect</span>
+	return (
+		<section className={styles.hero}>
+			<div className="container">
+				<div className={styles.content}>
+					<aside className={styles.socialRail} aria-label="Social links">
+						<span className={styles.railLabel}>Connect</span>
 
-            <div className={styles.railLinks}>
-              {socialLinks.map(({ label, href, icon: Icon }) => (
-                <a
-                  key={label}
-                  href={href}
-                  className={styles.railLink}
-                  target={href.startsWith("http") ? "_blank" : undefined}
-                  rel={
-                    href.startsWith("http") ? "noopener noreferrer" : undefined
-                  }
-                  aria-label={label}
-                >
-                  <Icon aria-hidden="true" />
-                </a>
-              ))}
-            </div>
-          </aside>
+						<div className={styles.railLinks}>
+							{socialLinks.map(({ label, href, icon: Icon }) => (
+								<a
+									key={label}
+									href={href}
+									className={styles.railLink}
+									target={href.startsWith("http") ? "_blank" : undefined}
+									rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+									aria-label={label}
+								>
+									<Icon aria-hidden="true" />
+								</a>
+							))}
+						</div>
+					</aside>
 
-          <div className={styles.left}>
-            <p className={styles.eyebrow}>Portfolio / Resume</p>
+					<div className={styles.left}>
+						<p className={styles.eyebrow}>Portfolio / Resume</p>
 
-            <h1 className={styles.name}>{profile.name.toUpperCase()}</h1>
+						<h1 className={styles.name}>{profile.name.toUpperCase()}</h1>
 
-            <p className={styles.title}>{profile.title}</p>
+						<div className={styles.role}>
+							<p className={styles.title}>{profile.title}</p>
+							<p className={styles.subTitle}>{profile.subTitle}</p>
+						</div>
 
-            <p className={styles.summary}>{profile.summary}</p>
+						<p className={styles.summary}>{profile.summary}</p>
 
-            <div className={styles.actions}>
-              <a href="/case-study" className={styles.primaryButton}>
-                <span>View Case Study</span>
-                <FaArrowUpRightFromSquare aria-hidden="true" />
-              </a>
+						<div className={styles.actions}>
+							<a href="/case-study" className={styles.primaryButton}>
+								<span>View Case Study</span>
+								<FaArrowUpRightFromSquare aria-hidden="true" />
+							</a>
 
-              <a
-                href="/resume"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.secondaryButton}
-              >
-                <span>View Resume</span>
-                <FaDownload aria-hidden="true" />
-              </a>
-            </div>
-          </div>
+							{/* <a
+								href="/resume"
+								target="_blank"
+								rel="noopener noreferrer"
+								className={styles.secondaryButton}
+							>
+								<span>View Resume</span>
+								<FaDownload aria-hidden="true" />
+							</a> */}
 
-          <aside className={styles.meta} aria-label="Professional details">
-            <div className={styles.metaSection}>
-              <span className={styles.sectionLabel}>Contact</span>
+							<a
+								href="/Lan-Nguyen-Resume.pdf"
+								download="Lan-Nguyen-Resume.pdf"
+								className={styles.secondaryButton}
+							>
+								<span>Download Resume</span>
+								<FaDownload aria-hidden="true" />
+							</a>
+						</div>
+					</div>
 
-              <address className={styles.contactList}>
-                {contactItems.map(({ label, value, href, icon: Icon }) => (
-                  <div key={label} className={styles.contactItem}>
-                    <span className={styles.itemIcon} aria-hidden="true">
-                      <Icon />
-                    </span>
+					<aside className={styles.meta} aria-label="Professional details">
+						<div className={styles.metaSection}>
+							<span className={styles.sectionLabel}>Contact</span>
 
-                    <div className={styles.itemContent}>
-                      <span className={styles.itemLabel}>{label}</span>
+							<address className={styles.contactList}>
+								{contactItems.map(({ label, value, href, icon: Icon }) => (
+									<div key={label} className={styles.contactItem}>
+										<span className={styles.itemIcon} aria-hidden="true">
+											<Icon />
+										</span>
 
-                      {href ? (
-                        <a
-                          href={href}
-                          target={
-                            href.startsWith("http") ? "_blank" : undefined
-                          }
-                          rel={
-                            href.startsWith("http")
-                              ? "noopener noreferrer"
-                              : undefined
-                          }
-                          className={styles.itemValue}
-                        >
-                          {value}
-                        </a>
-                      ) : (
-                        <span className={styles.itemValue}>{value}</span>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </address>
-            </div>
+										<div className={styles.itemContent}>
+											<span className={styles.itemLabel}>{label}</span>
 
-            <div className={styles.metaSection}>
-              <span className={styles.sectionLabel}>Core Stack</span>
+											{href ?
+												<a
+													href={href}
+													target={href.startsWith("http") ? "_blank" : undefined}
+													rel={
+														href.startsWith("http") ? "noopener noreferrer" : (
+															undefined
+														)
+													}
+													className={styles.itemValue}
+												>
+													{value}
+												</a>
+											:	<span className={styles.itemValue}>{value}</span>}
+										</div>
+									</div>
+								))}
+							</address>
+						</div>
 
-              <ul className={styles.stackList}>
-                {techItems.map(({ label, icon: Icon }) => (
-                  <li key={label} className={styles.stackItem}>
-                    <Icon aria-hidden="true" />
-                    <span>{label}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </section>
-  );
+						<div className={styles.metaSection}>
+							<span className={styles.sectionLabel}>Core Stack</span>
+
+							<ul className={styles.stackList}>
+								{techItems.map(({ label, icon: Icon }) => (
+									<li key={label} className={styles.stackItem}>
+										<Icon aria-hidden="true" />
+										<span>{label}</span>
+									</li>
+								))}
+							</ul>
+						</div>
+					</aside>
+				</div>
+			</div>
+		</section>
+	);
 };
 
 export default Hero;
