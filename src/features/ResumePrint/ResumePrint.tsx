@@ -2,232 +2,206 @@ import { education, experience, profile, technicalSkills } from "../../data";
 import styles from "./ResumePrint.module.scss";
 
 const getOrganizationLabel = (organization: string[]) => {
-  return organization.length > 1
-    ? "Organization Evolution"
-    : "Early Interface Design";
+	return organization.length > 1 ? "Organization Evolution" : "Early Interface Design";
 };
 
 const ResumePrint = () => {
-  const handlePrint = () => {
-    window.print();
-  };
+	const handlePrint = async () => {
+		await document.fonts.ready;
+		window.print();
+	};
 
-  return (
-    <main className={styles.resumePrint}>
-      <div className={styles.printToolbar}>
-        <button
-          type="button"
-          className={styles.printButton}
-          onClick={handlePrint}
-        >
-          Download Resume
-        </button>
-      </div>
-      <section className={styles.page}>
-        <header className={styles.header}>
-          <div>
-            <p className={styles.eyebrow}>Portfolio / Resume</p>
+	return (
+		<main className={styles.resumePrint}>
+			<div className={styles.printToolbar}>
+				<button type="button" className={styles.printButton} onClick={handlePrint}>
+					Download Resume
+				</button>
+			</div>
+			<section className={styles.page}>
+				<header className={styles.header}>
+					<div>
+						<p className={styles.eyebrow}>Portfolio / Resume</p>
 
-            <h1>{profile.name}</h1>
+						<h1>{profile.name}</h1>
 
-            <p className={styles.title}>{profile.title}</p>
-          </div>
+						<p className={styles.title}>{profile.title}</p>
+					</div>
 
-          <div className={styles.contact}>
-            <a href={`mailto:${profile.contact.email}`}>
-              {profile.contact.email}
-            </a>
+					<div className={styles.contact}>
+						<a href={`mailto:${profile.contact.email}`}>{profile.contact.email}</a>
 
-            <a href={profile.contact.phoneHref}>{profile.contact.phone}</a>
+						<a href={profile.contact.phoneHref}>{profile.contact.phone}</a>
 
-            <a href={profile.contact.linkedin} target="_blank" rel="noreferrer">
-              linkedin.com/in/lanestrin
-            </a>
+						<a href={profile.contact.linkedin} target="_blank" rel="noreferrer">
+							linkedin.com/in/lanestrin
+						</a>
 
-            <a
-              href={profile.contact.portfolio}
-              target="_blank"
-              rel="noreferrer"
-            >
-              lan-nguyen-dev.vercel.app/case-study
-            </a>
-          </div>
-        </header>
+						<a href={profile.contact.portfolio} target="_blank" rel="noreferrer">
+							lan-nguyen-dev.vercel.app/case-study
+						</a>
+					</div>
+				</header>
 
-        <section className={styles.summary}>
-          <p>{profile.summary}</p>
-        </section>
+				<section className={styles.summary}>
+					<p>{profile.summary}</p>
+				</section>
 
-        {/* TECHNICAL SKILLS */}
+				{/* TECHNICAL SKILLS */}
 
-        <section className={`${styles.section} ${styles.skillsSection}`}>
-          <div className={styles.sectionTitle}>
-            <h2>Technical Skills</h2>
-          </div>
+				<section className={`${styles.section} ${styles.skillsSection}`}>
+					<div className={styles.sectionTitle}>
+						<h2>Technical Skills</h2>
+					</div>
 
-          <div className={styles.skillGroups} aria-label="Technical skills">
-            {technicalSkills.map(({ title, tools }) => (
-              <div key={title} className={styles.skillGroup}>
-                <h3 className={styles.skillLabel}>{title}</h3>
+					<div className={styles.skillGroups} aria-label="Technical skills">
+						{technicalSkills.map(({ title, tools }) => (
+							<div key={title} className={styles.skillGroup}>
+								<h3 className={styles.skillLabel}>{title}</h3>
 
-                <ul className={styles.skillTags} aria-label={`${title} skills`}>
-                  {tools.map((tool) => (
-                    <li key={tool}>{tool}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
+								<ul className={styles.skillTags} aria-label={`${title} skills`}>
+									{tools.map((tool) => (
+										<li key={tool}>{tool}</li>
+									))}
+								</ul>
+							</div>
+						))}
+					</div>
+				</section>
 
-        {/* EXPERIENCE */}
+				{/* EXPERIENCE */}
 
-        <section className={styles.section}>
-          <div className={styles.sectionTitle}>
-            <h2>Professional Experience</h2>
-          </div>
+				<section className={styles.section}>
+					<div className={styles.sectionTitle}>
+						<h2>Professional Experience</h2>
+					</div>
 
-          <div className={styles.stack}>
-            {experience.map((career, careerIndex) => {
-              const [firstRole, ...remainingRoles] = career.roles;
+					<div className={styles.stack}>
+						{experience.map((career, careerIndex) => {
+							const [firstRole, ...remainingRoles] = career.roles;
 
-              return (
-                <section
-                  key={career.organization.join("-")}
-                  className={styles.organization}
-                >
-                  <div className={styles.organizationIntro}>
-                    <header className={styles.organizationHeader}>
-                      <div className={styles.organizationMeta}>
-                        <span className={styles.organizationNumber}>
-                          {String(careerIndex + 1).padStart(2, "0")}
-                        </span>
+							return (
+								<section
+									key={career.organization.join("-")}
+									className={styles.organization}
+								>
+									<div className={styles.organizationIntro}>
+										<header className={styles.organizationHeader}>
+											<div className={styles.organizationMeta}>
+												<span className={styles.organizationNumber}>
+													{String(careerIndex + 1).padStart(2, "0")}
+												</span>
 
-                        <span className={styles.organizationSlash}>/</span>
+												<span className={styles.organizationSlash}>/</span>
 
-                        <span className={styles.organizationLabel}>
-                          {getOrganizationLabel(career.organization)}
-                        </span>
-                      </div>
+												<span className={styles.organizationLabel}>
+													{getOrganizationLabel(career.organization)}
+												</span>
+											</div>
 
-                      <ol
-                        className={styles.organizationProgress}
-                        aria-label="Organization progression"
-                      >
-                        {career.organization.map((company, index) => (
-                          <li key={company}>
-                            <span>{company}</span>
+											<ol
+												className={styles.organizationProgress}
+												aria-label="Organization progression"
+											>
+												{career.organization.map((company, index) => (
+													<li key={company}>
+														<span>{company}</span>
 
-                            {index < career.organization.length - 1 && (
-                              <span
-                                className={styles.transitionIcon}
-                                aria-hidden="true"
-                              >
-                                {" "}
-                                →{" "}
-                              </span>
-                            )}
-                          </li>
-                        ))}
-                      </ol>
+														{index < career.organization.length - 1 && (
+															<span
+																className={styles.transitionIcon}
+																aria-hidden="true"
+															>
+																{" "}
+																→{" "}
+															</span>
+														)}
+													</li>
+												))}
+											</ol>
 
-                      {career.description && (
-                        <p className={styles.organizationSummary}>
-                          {career.description}
-                        </p>
-                      )}
-                    </header>
+											{career.description && (
+												<p className={styles.organizationSummary}>
+													{career.description}
+												</p>
+											)}
+										</header>
 
-                    {firstRole && (
-                      <article
-                        className={styles.job}
-                        key={`${firstRole.company}-${firstRole.role}`}
-                      >
-                        <div className={styles.jobHeader}>
-                          <div>
-                            <h3>{firstRole.role}</h3>
+										{firstRole && (
+											<article
+												className={styles.job}
+												key={`${firstRole.company}-${firstRole.role}`}
+											>
+												<div className={styles.jobHeader}>
+													<div>
+														<h3>{firstRole.role}</h3>
 
-                            <p>
-                              {firstRole.company} · {firstRole.meta}
-                            </p>
-                          </div>
+														<p>
+															{firstRole.company} · {firstRole.meta}
+														</p>
+													</div>
 
-                          <span>{firstRole.period}</span>
-                        </div>
+													<span>{firstRole.period}</span>
+												</div>
 
-                        <ul>
-                          {firstRole.bullets.map((bullet) => (
-                            <li key={bullet}>{bullet}</li>
-                          ))}
-                        </ul>
+												<ul>
+													{firstRole.bullets.map((bullet) => (
+														<li key={bullet}>{bullet}</li>
+													))}
+												</ul>
+											</article>
+										)}
+									</div>
 
-                        <div className={styles.tags}>
-                          {firstRole.stack.map((item) => (
-                            <span key={item}>{item}</span>
-                          ))}
-                        </div>
-                      </article>
-                    )}
-                  </div>
+									{remainingRoles.map((role) => (
+										<article key={`${role.company}-${role.role}`} className={styles.job}>
+											<div className={styles.jobHeader}>
+												<div>
+													<h3>{role.role}</h3>
 
-                  {remainingRoles.map((role) => (
-                    <article
-                      key={`${role.company}-${role.role}`}
-                      className={styles.job}
-                    >
-                      <div className={styles.jobHeader}>
-                        <div>
-                          <h3>{role.role}</h3>
+													<p>
+														{role.company} · {role.meta}
+													</p>
+												</div>
 
-                          <p>
-                            {role.company} · {role.meta}
-                          </p>
-                        </div>
+												<span>{role.period}</span>
+											</div>
 
-                        <span>{role.period}</span>
-                      </div>
+											<ul>
+												{role.bullets.map((bullet) => (
+													<li key={bullet}>{bullet}</li>
+												))}
+											</ul>
+										</article>
+									))}
+								</section>
+							);
+						})}
+					</div>
+				</section>
 
-                      <ul>
-                        {role.bullets.map((bullet) => (
-                          <li key={bullet}>{bullet}</li>
-                        ))}
-                      </ul>
+				{/* EDUCATION */}
 
-                      <div className={styles.tags}>
-                        {role.stack.map((item) => (
-                          <span key={item}>{item}</span>
-                        ))}
-                      </div>
-                    </article>
-                  ))}
-                </section>
-              );
-            })}
-          </div>
-        </section>
+				<section className={styles.twoColumn}>
+					<section className={styles.section}>
+						<div className={styles.sectionTitle}>
+							<h2>Education</h2>
+						</div>
 
-        {/* EDUCATION */}
+						{education.map((item) => (
+							<article key={item.school} className={styles.compactItem}>
+								<h3>{item.school}</h3>
 
-        <section className={styles.twoColumn}>
-          <section className={styles.section}>
-            <div className={styles.sectionTitle}>
-              <h2>Education</h2>
-            </div>
+								<p>{item.degree}</p>
 
-            {education.map((item) => (
-              <article key={item.school} className={styles.compactItem}>
-                <h3>{item.school}</h3>
-
-                <p>{item.degree}</p>
-
-                <span>{item.period}</span>
-              </article>
-            ))}
-          </section>
-        </section>
-      </section>
-    </main>
-  );
+								<span>{item.period}</span>
+							</article>
+						))}
+					</section>
+				</section>
+			</section>
+		</main>
+	);
 };
 
 export default ResumePrint;
