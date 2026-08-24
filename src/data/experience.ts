@@ -1,132 +1,142 @@
 export interface Role {
-    role: string;
-    company: string;
-    period: string;
-    meta: string;
-    bullets: string[];
-    stack: string[];
+	role: string;
+	company: string;
+	period: string;
+	meta: string;
+	summary: string;
+	bullets: string[];
+	stack: string[];
 }
 
 export interface Experience {
-    organization: string[];
-    description?: string;
-    roles: Role[];
+	organization: string[];
+	description?: string;
+	roles: Role[];
 }
 
 export const experience: Experience[] = [
-    {
-        organization: [
-            "GTM Sportswear",
-            "Champion Teamwear",
-            "Hanesbrands",
-            "Unrivaled Teamwear",
-        ],
-        description:
-            "Continuous employment through multiple acquisitions and ownership transitions. Promoted through increasingly technical roles, from product systems and workflow automation into frontend application development and senior engineering responsibilities.",
-        roles: [
-            {
-                role: "Senior Application Developer",
-                company: "Unrivaled Teamwear",
-                period: "Nov 2024 — Present",
-                meta: "Enterprise Web Applications",
-                bullets: [
-                    "Promoted to Senior Application Developer, taking broader ownership of frontend architecture, application stability, and modernization across enterprise sales, checkout, graphics, and order-processing systems.",
-                    "Led a React and TypeScript refactor of the Coach's Assistant checkout workflow, resolving defects that could create duplicate transactions or accept payment without successfully creating an order.",
-                    "Modernized legacy .NET MVC workflows by rebuilding frontend functionality in React and TypeScript while supporting C# and .NET backend services.",
-                    "Re-architected significant portions of the Sales Order Entry application with React Context and improved state-management patterns, reducing fragmented component state and creating a more maintainable foundation.",
-                    "Contributed to the transition from legacy .NET MVC applications toward modern .NET services and Vite-powered React frontends, including deployment and environment validation through Azure DevOps.",
-                ],
-                stack: [
-                    "React",
-                    "TypeScript",
-                    "React Context",
-                    "C#",
-                    ".NET",
-                    ".NET MVC",
-                    "Vite",
-                    "Azure DevOps",
-                ],
-            },
-            {
-                role: "Developer Applications III",
-                company: "Hanesbrands Inc.",
-                period: "Jun 2022 — Nov 2024",
-                meta: "Application Development",
-                bullets: [
-                    "Promoted from Research & Development Coordinator into a dedicated application development role, building production React applications for commerce, payments, sales operations, and internal workflows.",
-                    "Owned the frontend design and development of the Sales Order Entry application, translating business requirements and approved wireframes into production React interfaces.",
-                    "Built React applications connected to REST APIs and C#/.NET MVC services, supporting customer-facing commerce and internal business operations.",
-                    "Implemented Adyen payment improvements and integrated Shopify, tax, analytics, and consent-management services across enterprise applications.",
-                    "Introduced and expanded automated testing with Playwright and Jest, protecting critical user workflows and increasing release confidence.",
-                ],
-                stack: [
-                    "React",
-                    "TypeScript",
-                    "C#",
-                    ".NET MVC",
-                    "REST APIs",
-                    "Adyen",
-                    "Shopify API",
-                    "Playwright",
-                    "Jest",
-                ],
-            },
-            {
-                role: "Research & Development Coordinator",
-                company: "Champion Teamwear",
-                period: "May 2016 — Jun 2022",
-                meta: "Product + Process Innovation",
-                bullets: [
-                    "Planned and executed the migration of company image assets and web-to-print workflows from Adobe Scene7 to the Pulse Graphics Engine before the platform's web-to-print functionality reached end of life.",
-                    "Developed Adobe Illustrator automation that cleaned artwork, consolidated color layers, prepared production files, and reduced manual production work from lengthy processes to minutes.",
-                    "Automated product-scaling workflows and the creation of thousands of templates while partnering with engineering, IT, and business teams to improve internal systems and operational processes.",
-                ],
-                stack: [
-                    "Workflow Automation",
-                    "Adobe Illustrator",
-                    "Adobe Scene7",
-                    "Pulse Graphics Engine",
-                    "PowerShell",
-                ],
-            },
-            {
-                role: "Lead Technical Application Designer",
-                company: "GTM Sportswear / Champion Teamwear",
-                period: "Mar 2014 — May 2016",
-                meta: "Product + Production Systems",
-                bullets: [
-                    "Led a team of 8–13 members supporting customizable web-to-print artwork, template development, 3D product preparation, and automated garment-scaling workflows.",
-                    "Partnered with marketing and web development teams to launch digital customization programs and improve production workflows, documentation, and turnaround time.",
-                ],
-                stack: [
-                    "Web-to-Print",
-                    "Workflow Automation",
-                    "Photoshop",
-                    "Illustrator",
-                    "Team Leadership",
-                ],
-            },
-        ],
-    },
-    {
-        organization: ["Network Computer Solutions"],
-        roles: [
-            {
-                role: "UI / UX Designer",
-                company: "Network Computer Solutions",
-                period: "Jan 2014 — Jan 2016",
-                meta: "Interface Design",
-                bullets: [
-                    "Designed and maintained the company's responsive website, including layout, navigation, visual hierarchy, and overall user experience.",
-                    "Created UI/UX concepts for software applications and collaborated with developers and business stakeholders to translate interface requirements into production-ready experiences.",
-                ],
-                stack: [
-                    "UI Design",
-                    "UX Design",
-                    "Responsive Design",
-                    "Web Design",
-                ],
-            },
-        ],
-    },
+	{
+		organization: ["GTM Sportswear", "Champion Teamwear", "Hanesbrands", "Unrivaled Teamwear"],
+		description:
+			"Continuous employment through multiple acquisitions and ownership transitions. Promoted through increasingly technical roles, from product systems and workflow automation into full-stack application development and senior application ownership.",
+		roles: [
+			{
+				role: "Senior Application Developer",
+				company: "Unrivaled Teamwear",
+				period: "Nov 2024 — Present",
+				meta: "Enterprise Web Applications",
+				summary:
+					"Develop, maintain, and support five business applications, including three customer-facing websites and two internal tools. Lead full-stack modernization, architecture, integrations, testing, deployment, and production support using React, TypeScript, C#/.NET, SQL, REST APIs, and Azure DevOps.",
+				bullets: [
+					"Led the Sales Order Entry expansion for the Cheer and Dance market, coordinating requirements across supply chain, backend development, and technical applications. Researched the product structure needed for web compatibility, defined the supporting data requirements, and trained the Technical Application team on the new product-building and data-entry processes.",
+					"Refactored the Sales Order Entry application for greater scalability and rebuilt its product-customization modal to dynamically render available options, persist user selections, and rehydrate customization data when saved quotes were reopened.",
+					"Led a React and TypeScript refactor of the Coach's Assistant checkout workflow, resolving defects that could create duplicate transactions or accept payment without successfully creating an order.",
+					"Refactored product-imagery components to reduce unnecessary server requests and redundant image reloads, improving application performance and the user experience.",
+					"Led the integration of a new Adyen payment process across all five business applications, coordinating implementation and validation across customer-facing and internal systems.",
+					"Led the development and integration of a Shopify e-commerce experience for a web influencer initiative.",
+					"Helped modernize legacy .NET MVC applications through React and TypeScript refactoring, modern .NET services, Vite-powered frontends, and Azure DevOps deployment validation.",
+				],
+				stack: [
+					"React.js",
+					"TypeScript",
+					"React Context",
+					"C#",
+					".NET",
+					".NET MVC",
+					"REST APIs",
+					"SQL",
+					"Vite",
+					"Adyen",
+					"Shopify API",
+					"Azure DevOps",
+				],
+			},
+			{
+				role: "Developer Applications III",
+				company: "Hanesbrands Inc.",
+				period: "Jun 2022 — Nov 2024",
+				meta: "Application Development",
+				summary:
+					"Developed and modernized applications supporting sales, payments, commerce, and internal business operations. Worked across React and TypeScript interfaces, C#/.NET MVC services, SQL, REST APIs, and third-party integrations while collaborating with sales teams, stakeholders, and product owners.",
+				bullets: [
+					"Independently learned React and C# to transition into application development and contribute across frontend interfaces and backend services.",
+					"Owned the UI/UX design and frontend development of the Sales Order Entry application, translating business requirements and approved wireframes into production React features.",
+					"Refactored significant portions of the Sales Order Entry interface and frontend code to improve usability, simplify workflows, and create a more maintainable foundation for new functionality.",
+					"Developed an automated customer-proof feature that generated artwork files and sent them to customers for approval, removing the Sales team's dependency on the Art Department and eliminating an additional manual step from the artwork workflow.",
+					"Led the modernization of legacy application dependencies by removing deprecated Bower packages, identifying secure replacements, and resolving cascading compatibility conflicts without disrupting existing functionality.",
+					"Researched and integrated Playwright, establishing end-to-end testing for critical application workflows and increasing confidence in production releases.",
+					"Connected React applications to REST APIs, SQL-backed data, and C#/.NET MVC services supporting customer-facing commerce and internal operations.",
+					"Implemented Adyen payment improvements and integrated Shopify, tax, analytics, and consent-management services across enterprise applications.",
+				],
+				stack: [
+					"React.js",
+					"TypeScript",
+					"C#",
+					".NET MVC",
+					"REST APIs",
+					"SQL",
+					"UI/UX",
+					"Playwright",
+					"Jest",
+					"Adyen",
+					"Shopify API",
+					"Dependency Modernization",
+				],
+			},
+			{
+				role: "Research & Development Coordinator",
+				company: "Champion Teamwear",
+				period: "May 2016 — Jun 2022",
+				meta: "Product + Process Innovation",
+				summary:
+					"Supported production systems through JavaScript automation, PowerShell scripting, software maintenance, and platform migration. Developed tools that reduced manual work and improved artwork preparation, template creation, and web-to-print production while partnering with engineering, IT, and business teams to keep systems stable and current.",
+				bullets: [
+					"Planned and executed the migration of company image assets and web-to-print workflows from Adobe Scene7 to the Pulse Graphics Engine before Scene7's web-to-print functionality reached end of life.",
+					"Developed JavaScript automation scripts for Adobe Illustrator that streamlined art-production tasks, reduced processing time by approximately 75%, accelerated the delivery of production-ready artwork, and improved file consistency.",
+					"Created a JavaScript automation script for Adobe Illustrator that identified and organized text, colors, mascots, and mascot colors for consistent entry into the content management system and reliable rendering in the web customization experience.",
+					"Built a JavaScript automation script for Adobe Illustrator that converted existing .ai artwork and recreated the files in the .pv format required by the Pulse Graphics Engine for web-based product rendering.",
+					"Automated product-scaling workflows and the creation of thousands of templates, helping Technical Application Designers prepare customizable products more efficiently.",
+					"Independently learned TypeScript and SQL to support the development team's data-management needs and contribute to internal tools and processes.",
+					"Developed a PowerShell script for transferring large files and digital assets between servers, reducing the manual effort required for system and asset migrations.",
+				],
+				stack: [
+					"Workflow Automation",
+					"JavaScript",
+					"Adobe Illustrator",
+					"Adobe Scene7",
+					"Pulse Graphics Engine",
+					"Content Management Systems",
+					"TypeScript",
+					"SQL",
+					"PowerShell",
+				],
+			},
+			{
+				role: "Lead Technical Application Designer",
+				company: "GTM Sportswear / Champion Teamwear",
+				period: "Mar 2014 — May 2016",
+				meta: "Product + Production Systems",
+				summary:
+					"Led technical design operations and a team responsible for web-based visual assets, product imagery, 3D preparation, web-to-print templates, and automated garment-scaling workflows. Partnered with design, marketing, product, and development teams to launch digital customization programs, support third-party integrations, and improve production delivery.",
+				bullets: [
+					"Researched and developed the product-preparation workflow for publishing customizable sublimated products on the web, establishing a consistent process for preparing digital assets and templates.",
+					"Created step-by-step training guides and trained team members to prepare products for web-based customization.",
+					"Collaborated with developers on the backend content management system and helped define URL parameter structures compatible with Adobe Scene7.",
+					"Designed the product-scaling workflow used in production, streamlining the web-to-print handoff and improving turnaround times.",
+					"Partnered with marketing and web development teams to launch digital customization programs and improve supporting workflows and documentation.",
+				],
+				stack: [
+					"Web-to-Print",
+					"Workflow Automation",
+					"Adobe Scene7",
+					"Content Management Systems",
+					"Photoshop",
+					"Illustrator",
+					"InDesign",
+					"JavaScript",
+					"Team Leadership",
+				],
+			},
+		],
+	},
 ];
