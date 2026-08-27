@@ -5,6 +5,23 @@ const getOrganizationLabel = (organization: string[]) => {
 	return organization.length > 1 ? "Organization Evolution" : "Early Interface Design";
 };
 
+const renderBullet = (bullet: string) => {
+	const colonIndex = bullet.indexOf(":");
+
+	if (colonIndex === -1) {
+		return bullet;
+	}
+
+	const label = bullet.slice(0, colonIndex);
+	const description = bullet.slice(colonIndex + 1).trim();
+
+	return (
+		<>
+			<strong>{label}:</strong> {description}
+		</>
+	);
+};
+
 const ResumePrint = () => {
 	const handlePrint = async () => {
 		await document.fonts.ready;
@@ -144,7 +161,7 @@ const ResumePrint = () => {
 
 												<ul className={styles.bullets}>
 													{firstRole.bullets.map((bullet) => (
-														<li key={bullet}>{bullet}</li>
+														<li key={bullet}>{renderBullet(bullet)}</li>
 													))}
 												</ul>
 
@@ -176,7 +193,7 @@ const ResumePrint = () => {
 
 											<ul className={styles.bullets}>
 												{role.bullets.map((bullet) => (
-													<li key={bullet}>{bullet}</li>
+													<li key={bullet}>{renderBullet(bullet)}</li>
 												))}
 											</ul>
 
