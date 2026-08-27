@@ -117,3 +117,38 @@
         }
     }
 }
+
+.developmentStatus {
+    margin-top: 1.5rem;
+
+    p {
+        margin-top: 0.75rem;
+    }
+}
+
+.statusBadge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    padding: 0.4rem 0.65rem;
+
+    border: 1px solid rgba(234, 179, 8, 0.35);
+    border-radius: 999px;
+
+    background: rgba(234, 179, 8, 0.08);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    color: #9a6700;
+}
+
+.statusDot {
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: #eab308;
+}
