@@ -216,13 +216,13 @@
     border-top: 1px solid var(--color-primary-08);
     break-inside: avoid;
     page-break-inside: avoid;
+}
 
-    ul {
-        margin: 0;
-        padding-left: 1.25rem;
-        list-style-type: disc;
-        list-style-position: outside;
-    }
+.bullets {
+    margin: 0;
+    padding-left: 1.25rem;
+    list-style-type: disc;
+    list-style-position: outside;
 
     li {
         width: 80%;
@@ -275,30 +275,33 @@
     }
 }
 
-.roleSummary {
-    width: 88%;
-    margin: 0 0 12px;
-    font-size: 11.5px;
-    line-height: 1.55;
-    color: var(--color-muted);
-}
-
-.tags {
+.stackList {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 12px;
+    gap: 5px;
 
-    span {
-        padding: 3px 8px;
-        border: 1px solid rgba(23, 34, 40, 0.15);
-        border-radius: 999px;
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+        display: inline-flex;
+        align-items: center;
+
+        width: auto;
+        margin: 0;
+        padding: 3px 6px;
+
+        border: 1px solid rgba(16, 37, 58, 0.1);
+        border-radius: var(--radius-pill);
+
         font-size: 8.5px;
         font-weight: 700;
         line-height: 1;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        color: var(--color-primary);
+        white-space: nowrap;
+
+        color: rgba(16, 37, 58, 0.72);
+        background: rgba(16, 37, 58, 0.022);
     }
 }
 
@@ -377,8 +380,6 @@
 
         color: var(--color-primary);
         background: transparent;
-        border-radius: 2px;
-
     }
 }
 
@@ -485,54 +486,20 @@
         page-break-after: avoid;
     }
 
-    .roleSummary {
-        break-inside: avoid-page;
-        page-break-inside: avoid;
-
-        break-before: avoid-page;
-        page-break-before: avoid;
-
-        orphans: 3;
-        widows: 3;
-    }
-
-    /*
-     * Prevent a page break between the role summary and the beginning of its
-     * accomplishment list.
-     */
-    .roleSummary+ul {
-        break-before: avoid-page;
-        page-break-before: avoid;
-
-        break-inside: auto;
-        page-break-inside: auto;
-
-        orphans: 2;
-        widows: 2;
-    }
-
-    /*
-     * Keep the first accomplishment with the role summary when possible.
-     */
-    .roleSummary+ul>li:first-child {
-        break-before: avoid-page;
-        page-break-before: avoid;
-    }
-
     /*
      * Individual bullets should not split across pages.
      */
-    .job li {
+    .bullets li {
         break-inside: avoid-page;
         page-break-inside: avoid;
     }
 
-    .job li:last-child {
+    .bullets li:last-child {
         break-after: avoid-page;
         page-break-after: avoid;
     }
 
-    .tags {
+    .stackList {
         break-inside: avoid-page;
         page-break-inside: avoid;
 
