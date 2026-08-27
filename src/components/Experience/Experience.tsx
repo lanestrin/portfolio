@@ -4,138 +4,142 @@ import { experience } from "../../data";
 import styles from "./Experience.module.scss";
 
 const getEndYearMarker = (period: string) => {
-  const endDate = period.split("—").pop()?.trim();
+	const endDate = period.split("—").pop()?.trim();
 
-  if (!endDate) {
-    return "";
-  }
+	if (!endDate) {
+		return "";
+	}
 
-  if (endDate.toLowerCase() === "present") {
-    return "Now";
-  }
+	if (endDate.toLowerCase() === "present") {
+		return "Now";
+	}
 
-  const yearMatch = endDate.match(/\d{4}/);
+	const yearMatch = endDate.match(/\d{4}/);
 
-  return yearMatch ? yearMatch[0] : endDate;
+	return yearMatch ? yearMatch[0] : endDate;
 };
 
 const getOrganizationLabel = (organization: string[]) => {
-  if (organization.length > 1) {
-    return "Organization Evolution";
-  }
+	if (organization.length > 1) {
+		return "Organization Evolution";
+	}
 
-  return "Early Interface Design";
+	return "Early Interface Design";
+};
+
+const renderBullet = (bullet: string) => {
+	const colonIndex = bullet.indexOf(":");
+
+	if (colonIndex === -1) {
+		return bullet;
+	}
+
+	const label = bullet.slice(0, colonIndex);
+	const description = bullet.slice(colonIndex + 1).trim();
+
+	return (
+		<>
+			<strong>{label}:</strong> {description}
+		</>
+	);
 };
 
 const Experience = () => {
-  return (
-    <section className={styles.experience}>
-      <div className="container">
-        <div className={styles.sectionHeader}>
-          <span className={styles.sectionKicker}>Career Record</span>
+	return (
+		<section className={styles.experience}>
+			<div className="container">
+				<div className={styles.sectionHeader}>
+					<span className={styles.sectionKicker}>Career Record</span>
 
-          <h2>Professional Experience</h2>
-        </div>
+					<h2>Professional Experience</h2>
+				</div>
 
-        <div className={styles.timeline}>
-          {experience.map((career, careerIndex) => (
-            <div
-              key={career.organization.join("-")}
-              className={styles.organization}
-            >
-              <div className={styles.organizationHeader}>
-                <div className={styles.organizationMeta}>
-                  <span className={styles.organizationNumber}>
-                    {String(careerIndex + 1).padStart(2, "0")}
-                  </span>
+				<div className={styles.timeline}>
+					{experience.map((career, careerIndex) => (
+						<div key={career.organization.join("-")} className={styles.organization}>
+							<div className={styles.organizationHeader}>
+								<div className={styles.organizationMeta}>
+									<span className={styles.organizationNumber}>
+										{String(careerIndex + 1).padStart(2, "0")}
+									</span>
 
-                  <span className={styles.organizationSlash} aria-hidden="true">
-                    /
-                  </span>
+									<span className={styles.organizationSlash} aria-hidden="true">
+										/
+									</span>
 
-                  <span className={styles.organizationLabel}>
-                    {getOrganizationLabel(career.organization)}
-                  </span>
-                </div>
+									<span className={styles.organizationLabel}>
+										{getOrganizationLabel(career.organization)}
+									</span>
+								</div>
 
-                <ol
-                  className={styles.organizationProgress}
-                  aria-label="Organization progression"
-                >
-                  {career.organization.map((company, index) => (
-                    <li key={company}>
-                      <span>{company}</span>
+								<ol
+									className={styles.organizationProgress}
+									aria-label="Organization progression"
+								>
+									{career.organization.map((company, index) => (
+										<li key={company}>
+											<span>{company}</span>
 
-                      {index < career.organization.length - 1 && (
-                        <HiArrowLongRight
-                          className={styles.transitionIcon}
-                          aria-hidden="true"
-                        />
-                      )}
-                    </li>
-                  ))}
-                </ol>
+											{index < career.organization.length - 1 && (
+												<HiArrowLongRight
+													className={styles.transitionIcon}
+													aria-hidden="true"
+												/>
+											)}
+										</li>
+									))}
+								</ol>
 
-                {career.description && (
-                  <p className={styles.organizationSummary}>
-                    {career.description}
-                  </p>
-                )}
-              </div>
+								{career.description && (
+									<p className={styles.organizationSummary}>{career.description}</p>
+								)}
+							</div>
 
-              {career.roles.map((role) => (
-                <article
-                  key={`${role.company}-${role.role}`}
-                  className={styles.position}
-                >
-                  <div className={styles.marker}>
-                    <span className={styles.index}>
-                      {getEndYearMarker(role.period)}
-                    </span>
+							{career.roles.map((role) => (
+								<article key={`${role.company}-${role.role}`} className={styles.position}>
+									<div className={styles.marker}>
+										<span className={styles.index}>{getEndYearMarker(role.period)}</span>
 
-                    <span className={styles.dot} aria-hidden="true" />
-                  </div>
+										<span className={styles.dot} aria-hidden="true" />
+									</div>
 
-                  <div className={styles.body}>
-                    <div className={styles.positionHeader}>
-                      <div>
-                        <h3>{role.role}</h3>
+									<div className={styles.body}>
+										<div className={styles.positionHeader}>
+											<div>
+												<h3>{role.role}</h3>
 
-                        <p>
-                          <span>{role.company}</span>
+												<p>
+													<span>{role.company}</span>
 
-                          <span aria-hidden="true">•</span>
+													<span aria-hidden="true">•</span>
 
-                          <span>{role.meta}</span>
-                        </p>
-                      </div>
+													<span>{role.meta}</span>
+												</p>
+											</div>
 
-                      <span className={styles.period}>{role.period}</span>
-                    </div>
+											<span className={styles.period}>{role.period}</span>
+										</div>
 
-                    <ul className={styles.bullets}>
-                      {role.bullets.map((bullet) => (
-                        <li key={bullet}>{bullet}</li>
-                      ))}
-                    </ul>
+										<ul className={styles.bullets}>
+											{role.bullets.map((bullet) => (
+												<li key={bullet}>{renderBullet(bullet)}</li>
+											))}
+										</ul>
 
-                    <ul
-                      className={styles.stackList}
-                      aria-label={`${role.role} skills`}
-                    >
-                      {role.stack.map((item) => (
-                        <li key={item}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </article>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+										<ul className={styles.stackList} aria-label={`${role.role} skills`}>
+											{role.stack.map((item) => (
+												<li key={item}>{item}</li>
+											))}
+										</ul>
+									</div>
+								</article>
+							))}
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+	);
 };
 
 export default Experience;

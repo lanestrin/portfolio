@@ -304,6 +304,11 @@
     background: rgba(16, 37, 58, 0.44);
 }
 
+.bullets strong {
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
 .stackList {
     display: flex;
     flex-wrap: wrap;

@@ -18,6 +18,7 @@ const ResumePrint = () => {
 					Download Resume
 				</button>
 			</div>
+
 			<section className={styles.page}>
 				<header className={styles.header}>
 					<div>
@@ -47,8 +48,6 @@ const ResumePrint = () => {
 					<p>{profile.summary}</p>
 				</section>
 
-				{/* TECHNICAL SKILLS */}
-
 				<section className={`${styles.section} ${styles.skillsSection}`}>
 					<div className={styles.sectionTitle}>
 						<h2>Technical Skills</h2>
@@ -68,8 +67,6 @@ const ResumePrint = () => {
 						))}
 					</div>
 				</section>
-
-				{/* EXPERIENCE */}
 
 				<section className={styles.section}>
 					<div className={styles.sectionTitle}>
@@ -92,7 +89,9 @@ const ResumePrint = () => {
 													{String(careerIndex + 1).padStart(2, "0")}
 												</span>
 
-												<span className={styles.organizationSlash}>/</span>
+												<span className={styles.organizationSlash} aria-hidden="true">
+													/
+												</span>
 
 												<span className={styles.organizationLabel}>
 													{getOrganizationLabel(career.organization)}
@@ -112,8 +111,7 @@ const ResumePrint = () => {
 																className={styles.transitionIcon}
 																aria-hidden="true"
 															>
-																{" "}
-																→{" "}
+																→
 															</span>
 														)}
 													</li>
@@ -144,9 +142,18 @@ const ResumePrint = () => {
 													<span>{firstRole.period}</span>
 												</div>
 
-												<ul>
+												<ul className={styles.bullets}>
 													{firstRole.bullets.map((bullet) => (
 														<li key={bullet}>{bullet}</li>
+													))}
+												</ul>
+
+												<ul
+													className={styles.stackList}
+													aria-label={`${firstRole.role} skills`}
+												>
+													{firstRole.stack.map((item) => (
+														<li key={item}>{item}</li>
 													))}
 												</ul>
 											</article>
@@ -167,9 +174,18 @@ const ResumePrint = () => {
 												<span>{role.period}</span>
 											</div>
 
-											<ul>
+											<ul className={styles.bullets}>
 												{role.bullets.map((bullet) => (
 													<li key={bullet}>{bullet}</li>
+												))}
+											</ul>
+
+											<ul
+												className={styles.stackList}
+												aria-label={`${role.role} skills`}
+											>
+												{role.stack.map((item) => (
+													<li key={item}>{item}</li>
 												))}
 											</ul>
 										</article>
@@ -179,8 +195,6 @@ const ResumePrint = () => {
 						})}
 					</div>
 				</section>
-
-				{/* EDUCATION */}
 
 				<section className={styles.twoColumn}>
 					<section className={styles.section}>

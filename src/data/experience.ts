@@ -28,13 +28,11 @@ export const experience: Experience[] = [
 				summary:
 					"Develop, maintain, and support five business applications, including three customer-facing websites and two internal tools. Lead full-stack modernization, architecture, integrations, testing, deployment, and production support using React, TypeScript, C#/.NET, SQL, REST APIs, and Azure DevOps.",
 				bullets: [
-					"Led the Sales Order Entry expansion for the Cheer and Dance market, coordinating requirements across supply chain, backend development, and technical applications. Researched the product structure needed for web compatibility, defined the supporting data requirements, and trained the Technical Application team on the new product-building and data-entry processes.",
-					"Refactored the Sales Order Entry application for greater scalability and rebuilt its product-customization modal to dynamically render available options, persist user selections, and rehydrate customization data when saved quotes were reopened.",
-					"Led a React and TypeScript refactor of the Coach's Assistant checkout workflow, resolving defects that could create duplicate transactions or accept payment without successfully creating an order.",
-					"Refactored product-imagery components to reduce unnecessary server requests and redundant image reloads, improving application performance and the user experience.",
-					"Led the integration of a new Adyen payment process across all five business applications, coordinating implementation and validation across customer-facing and internal systems.",
-					"Led the development and integration of a Shopify e-commerce experience for a web influencer initiative.",
-					"Helped modernize legacy .NET MVC applications through React and TypeScript refactoring, modern .NET services, Vite-powered frontends, and Azure DevOps deployment validation.",
+					"Architecture & Payment Integration: Architected and engineered the end-to-end integration of a new Adyen payment processor across 5 core enterprise applications, securing customer-facing and internal transactional workflows.",
+					"Legacy Modernization: Modernized legacy .NET MVC systems by refactoring them into decoupled React and TypeScript architectures with modern .NET backend services, utilizing Vite frontends and Azure DevOps for robust CI/CD validation.",
+					"Checkout Optimization: Led the full-stack refactor of the checkout workflow, fixing critical race conditions to eliminate duplicate payment transactions and ensure transactional integrity between frontend state and backend order creation.",
+					"System Scalability: Redesigned the product customization matrix and state hydration modal for the enterprise sales order system, reducing server overhead and dynamically persisting cross-functional configuration profiles.",
+					"Performance Engineering: Optimised data-fetching strategies and asset loading for core imagery services, significantly dropping redundant server requests to maximize client-side responsiveness.",
 				],
 				stack: [
 					"React.js",
@@ -59,14 +57,10 @@ export const experience: Experience[] = [
 				summary:
 					"Developed and modernized applications supporting sales, payments, commerce, and internal business operations. Worked across React and TypeScript interfaces, C#/.NET MVC services, SQL, REST APIs, and third-party integrations while collaborating with sales teams, stakeholders, and product owners.",
 				bullets: [
-					"Independently learned React and C# to transition into application development and contribute across frontend interfaces and backend services.",
-					"Owned the UI/UX design and frontend development of the Sales Order Entry application, translating business requirements and approved wireframes into production React features.",
-					"Refactored significant portions of the Sales Order Entry interface and frontend code to improve usability, simplify workflows, and create a more maintainable foundation for new functionality.",
-					"Developed an automated customer-proof feature that generated artwork files and sent them to customers for approval, removing the Sales team's dependency on the Art Department and eliminating an additional manual step from the artwork workflow.",
-					"Led the modernization of legacy application dependencies by removing deprecated Bower packages, identifying secure replacements, and resolving cascading compatibility conflicts without disrupting existing functionality.",
-					"Researched and integrated Playwright, establishing end-to-end testing for critical application workflows and increasing confidence in production releases.",
-					"Connected React applications to REST APIs, SQL-backed data, and C#/.NET MVC services supporting customer-facing commerce and internal operations.",
-					"Implemented Adyen payment improvements and integrated Shopify, tax, analytics, and consent-management services across enterprise applications.",
+					"Full-Stack Feature Engineering: Pivoted into full-stack application development, engineering scalable features across frontend React interfaces and backend C# services for core enterprise web properties",
+					"UI/UX & Frontend Ownership: Owned the end-to-end UI/UX design and frontend development of the mission-critical Sales Order Entry application, transforming complex business requirements and wireframes into highly responsive production features",
+					"Codebase Optimization: Refactored major modules of the Sales Order Entry frontend to optimize code maintainability, simplify user workflows, and establish a modular design system for future updates",
+					"Workflow Automation Engine: Engineered an automated customer-proof generation tool that automatically compiled artwork data and handled client-approval communications, completely removing manual dependencies on the Art Department",
 				],
 				stack: [
 					"React.js",
@@ -91,13 +85,11 @@ export const experience: Experience[] = [
 				summary:
 					"Supported production systems through JavaScript automation, PowerShell scripting, software maintenance, and platform migration. Developed tools that reduced manual work and improved artwork preparation, template creation, and web-to-print production while partnering with engineering, IT, and business teams to keep systems stable and current.",
 				bullets: [
-					"Planned and executed the migration of company image assets and web-to-print workflows from Adobe Scene7 to the Pulse Graphics Engine before Scene7's web-to-print functionality reached end of life.",
-					"Developed JavaScript automation scripts for Adobe Illustrator that streamlined art-production tasks, reduced processing time by approximately 75%, accelerated the delivery of production-ready artwork, and improved file consistency.",
-					"Created a JavaScript automation script for Adobe Illustrator that identified and organized text, colors, mascots, and mascot colors for consistent entry into the content management system and reliable rendering in the web customization experience.",
-					"Built a JavaScript automation script for Adobe Illustrator that converted existing .ai artwork and recreated the files in the .pv format required by the Pulse Graphics Engine for web-based product rendering.",
-					"Automated product-scaling workflows and the creation of thousands of templates, helping Technical Application Designers prepare customizable products more efficiently.",
-					"Independently learned TypeScript and SQL to support the development team's data-management needs and contribute to internal tools and processes.",
-					"Developed a PowerShell script for transferring large files and digital assets between servers, reducing the manual effort required for system and asset migrations.",
+					"System & Asset Migration: Orchestrated the migration of enterprise image assets and web-to-print production pipelines from legacy Adobe Scene7 to the Pulse Graphics Engine before end-of-life",
+					"Workflow Automation Scripting: Developed custom JavaScript automation scripts for Adobe Illustrator, accelerating art production delivery speeds by 75% while heavily reducing manual data processing errors",
+					"Data & Render Optimization: Engineered parsing scripts to automatically identify and structure text, canvas styling, and colors for seamless entry into the core CMS, ensuring stable rendering across web customization experiences",
+					"Technical Upskilling: Independently mastered TypeScript and SQL to support core software database needs, building utility scripts to improve data pipelines and internal infrastructure tools",
+					"Server Scripting: Created robust PowerShell automation scripts to securely transfer large-scale asset profiles and file arrays during system migrations, eliminating manual overhead",
 				],
 				stack: [
 					"Workflow Automation",
@@ -105,7 +97,6 @@ export const experience: Experience[] = [
 					"Adobe Illustrator",
 					"Adobe Scene7",
 					"Pulse Graphics Engine",
-					"Content Management Systems",
 					"TypeScript",
 					"SQL",
 					"PowerShell",
@@ -119,11 +110,9 @@ export const experience: Experience[] = [
 				summary:
 					"Led technical design operations and a team responsible for web-based visual assets, product imagery, 3D preparation, web-to-print templates, and automated garment-scaling workflows. Partnered with design, marketing, product, and development teams to launch digital customization programs, support third-party integrations, and improve production delivery.",
 				bullets: [
-					"Researched and developed the product-preparation workflow for publishing customizable sublimated products on the web, establishing a consistent process for preparing digital assets and templates.",
-					"Created step-by-step training guides and trained team members to prepare products for web-based customization.",
-					"Collaborated with developers on the backend content management system and helped define URL parameter structures compatible with Adobe Scene7.",
-					"Designed the product-scaling workflow used in production, streamlining the web-to-print handoff and improving turnaround times.",
-					"Partnered with marketing and web development teams to launch digital customization programs and improve supporting workflows and documentation.",
+					"Web-to-Print Engineering: Formulated the product-preparation guidelines and configuration standards for publishing complex customizable apparel assets to web interfaces",
+					"CMS Pipeline Collaboration: Partnered closely with backend engineering teams to design scalable URL parameter structures for dynamic asset configuration using Adobe Scene7",
+					"Cross-Functional System Launches: Collaborated directly with web development and marketing teams to launch online product personalization initiatives, generating automated templates to optimize the web-to-print handoff",
 				],
 				stack: [
 					"Web-to-Print",
@@ -132,7 +121,6 @@ export const experience: Experience[] = [
 					"Content Management Systems",
 					"Photoshop",
 					"Illustrator",
-					"InDesign",
 					"JavaScript",
 					"Team Leadership",
 				],

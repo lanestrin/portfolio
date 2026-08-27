@@ -16,10 +16,10 @@ export interface Profile {
 
 export const profile: Profile = {
 	name: "Lan Nguyen",
-	title: "Senior Application Developer",
-	subTitle: "Frontend Development | Full-Stack Experience",
+	title: "Senior Software Engineer",
+	subTitle: "Full-Stack Experience | Frontend Focus",
 	summary:
-		"Full-stack application developer with strong frontend expertise, building and modernizing enterprise applications with React, TypeScript, C#/.NET, SQL, and REST APIs. I combine application development, workflow automation, and a design background to create reliable systems and intuitive user experiences.",
+		"Senior Software Engineer with 5+ years of experience in full-stack and frontend web application development. Specialized in modernizing enterprise architectures and building reliable, scalable systems utilizing React, TypeScript, C#/.NET, and SQL. Proven track record of combining workflow automation and intuitive UI/UX design to improve deployment efficiencies and user experiences.",
 	contact: {
 		email: "ln.nguy3n@gmail.com",
 		phone: "(913) 205-7926",

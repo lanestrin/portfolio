@@ -41,6 +41,8 @@ const techItems = [
 	{ label: "Next.js", icon: SiNextdotjs },
 	{ label: "TypeScript", icon: SiTypescript },
 	{ label: "SCSS", icon: SiSass },
+	{ label: "C#/.NET" },
+	{ label: "SQL" },
 ];
 
 const Hero = () => {
@@ -146,7 +148,7 @@ const Hero = () => {
 							<ul className={styles.stackList}>
 								{techItems.map(({ label, icon: Icon }) => (
 									<li key={label} className={styles.stackItem}>
-										<Icon aria-hidden="true" />
+										{Icon && <Icon aria-hidden="true" />}
 										<span>{label}</span>
 									</li>
 								))}
