@@ -27,11 +27,21 @@ const getOrganizationLabel = (organization: string[]) => {
 	return "Early Interface Design";
 };
 
+const renderEmphasis = (text: string) => {
+	return text.split(/(\*\*.*?\*\*)/g).map((part, index) => {
+		if (part.startsWith("**") && part.endsWith("**")) {
+			return <strong key={`${part}-${index}`}>{part.slice(2, -2)}</strong>;
+		}
+
+		return part;
+	});
+};
+
 const renderBullet = (bullet: string) => {
 	const colonIndex = bullet.indexOf(":");
 
 	if (colonIndex === -1) {
-		return bullet;
+		return renderEmphasis(bullet);
 	}
 
 	const label = bullet.slice(0, colonIndex);
@@ -39,7 +49,7 @@ const renderBullet = (bullet: string) => {
 
 	return (
 		<>
-			<strong>{label}:</strong> {description}
+			<strong>{label}:</strong> {renderEmphasis(description)}
 		</>
 	);
 };

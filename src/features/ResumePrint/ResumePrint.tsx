@@ -5,11 +5,21 @@ const getOrganizationLabel = (organization: string[]) => {
 	return organization.length > 1 ? "Organization Evolution" : "Early Interface Design";
 };
 
+const renderEmphasis = (text: string) => {
+	return text.split(/(\*\*.*?\*\*)/g).map((part, index) => {
+		if (part.startsWith("**") && part.endsWith("**")) {
+			return <strong key={`${part}-${index}`}>{part.slice(2, -2)}</strong>;
+		}
+
+		return part;
+	});
+};
+
 const renderBullet = (bullet: string) => {
 	const colonIndex = bullet.indexOf(":");
 
 	if (colonIndex === -1) {
-		return bullet;
+		return renderEmphasis(bullet);
 	}
 
 	const label = bullet.slice(0, colonIndex);
@@ -17,7 +27,7 @@ const renderBullet = (bullet: string) => {
 
 	return (
 		<>
-			<strong>{label}:</strong> {description}
+			<strong>{label}:</strong> {renderEmphasis(description)}
 		</>
 	);
 };
@@ -39,8 +49,6 @@ const ResumePrint = () => {
 			<section className={styles.page}>
 				<header className={styles.header}>
 					<div>
-						<p className={styles.eyebrow}>Portfolio / Resume</p>
-
 						<h1>{profile.name}</h1>
 
 						<p className={styles.title}>{profile.title}</p>
@@ -56,7 +64,7 @@ const ResumePrint = () => {
 						</a>
 
 						<a href={profile.contact.portfolio} target="_blank" rel="noreferrer">
-							lan-nguyen-dev.vercel.app/case-study
+							lan-nguyen-dev.vercel.app
 						</a>
 					</div>
 				</header>

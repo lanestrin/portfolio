@@ -8,6 +8,7 @@
 .printToolbar {
     display: flex;
     justify-content: flex-end;
+
     width: min(8.5in, 100%);
     margin: 0 auto 16px;
 }
@@ -85,7 +86,7 @@
     flex-direction: column;
     justify-content: flex-end;
     gap: 7px;
-    font-size: 12.5px;
+    font-size: 12px;
     line-height: 1.45;
 
     a {
@@ -101,7 +102,7 @@
     p {
         max-width: 680px;
         margin: 0;
-        font-size: 12.5px;
+        font-size: 13px;
         line-height: 1.65;
     }
 }
@@ -204,8 +205,8 @@
 .organizationSummary {
     max-width: 72%;
     margin: 14px 0 0;
-    font-size: 12.5px;
-    //line-height: 1.6;
+    font-size: 11.5px;
+    line-height: 1.6;
     color: var(--color-muted);
 }
 
@@ -227,8 +228,8 @@
         width: 80%;
         margin-bottom: 8px;
         padding-left: 4px;
-        font-size: 12.5px;
-        //line-height: 1.55;
+        font-size: 11.5px;
+        line-height: 1.55;
 
         &::before {
             content: none;
@@ -294,7 +295,7 @@
         border: 1px solid rgba(16, 37, 58, 0.1);
         border-radius: var(--radius-pill);
 
-        font-size: 10px;
+        font-size: 8.5px;
         font-weight: 700;
         line-height: 1;
         white-space: nowrap;
@@ -447,16 +448,41 @@
     }
 
     /*
-     * Keep section and organization headings with the content
-     * that immediately follows them.
+     * Education is the only section currently inside twoColumn.
+     * Let it use the remaining space on the current page instead of
+     * forcing the entire block onto a new page.
      */
-    .sectionTitle,
-    .organizationHeader {
+    .twoColumn {
+        display: block;
+        break-inside: auto;
+        page-break-inside: auto;
+
+        .section {
+            padding-top: 20px;
+            padding-bottom: 0;
+            border-bottom: 0;
+        }
+    }
+
+    /*
+     * Keep the section title with the organization summary, but allow the
+     * organization summary to remain at the bottom of page 1 while the first
+     * job starts cleanly on page 2.
+     */
+    .sectionTitle {
         break-inside: avoid-page;
         page-break-inside: avoid;
 
         break-after: avoid-page;
         page-break-after: avoid;
+    }
+
+    .organizationHeader {
+        break-inside: avoid-page;
+        page-break-inside: avoid;
+
+        break-after: auto;
+        page-break-after: auto;
     }
 
     /*
@@ -470,6 +496,9 @@
     }
 
     .job {
+        margin-top: 22px;
+        padding-top: 22px;
+
         break-inside: avoid-page;
         page-break-inside: avoid;
     }
@@ -489,6 +518,9 @@
      * Individual bullets should not split across pages.
      */
     .bullets li {
+        margin-bottom: 6px;
+        line-height: 1.5;
+
         break-inside: avoid-page;
         page-break-inside: avoid;
     }

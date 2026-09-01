@@ -6,29 +6,20 @@ export interface TechnicalSkill {
 
 export const technicalSkills: TechnicalSkill[] = [
 	{
-		title: "Languages",
-		description:
-			"Build production web applications with strongly typed frontend and backend code, semantic markup, and maintainable styling systems.",
-		tools: ["TypeScript", "JavaScript", "C#", "SQL", "HTML", "CSS", "SCSS"],
-	},
-	{
 		title: "Frontend",
 		description:
-			"Design and modernize maintainable interfaces for complex commerce and enterprise workflows with reusable components, predictable state, responsive behavior, and accessible UI patterns.",
+			"Build and modernize enterprise interfaces with React and TypeScript, focusing on maintainable component architecture, predictable state management, responsive design, accessibility, and user-friendly workflows.",
 		tools: [
-			"TypeScript",
 			"React",
+			"TypeScript",
+			"JavaScript",
 			"Next.js",
-			"Three.js",
-			"Vue.js",
+			"Vite",
 			"React Query",
 			"React Context",
-			"Vite",
+			"HTML",
 			"CSS",
 			"SCSS",
-			"Sass",
-			"HTML",
-			"jQuery",
 			"UI/UX",
 			"Responsive Design",
 			"Accessibility",
@@ -37,8 +28,8 @@ export const technicalSkills: TechnicalSkill[] = [
 	{
 		title: "Backend, Data & APIs",
 		description:
-			"Support full-stack applications with C# and .NET services, SQL-backed workflows, REST integrations, and reactive backend platforms for data, authentication, and real-time updates.",
-		tools: ["C#", ".NET", ".NET MVC", "Node.js", "Express.js", "REST APIs", "SQL", "Convex"],
+			"Contribute to application workflows using C#/.NET, SQL, and REST APIs, including controller validation and integration with existing backend services.",
+		tools: ["C#", ".NET", ".NET MVC", "REST APIs", "SQL", "Node.js", "Express.js"],
 	},
 	{
 		title: "Testing",
@@ -57,23 +48,13 @@ export const technicalSkills: TechnicalSkill[] = [
 	{
 		title: "Commerce & Integrations",
 		description:
-			"Implement payment, commerce, tax, and analytics integrations that translate complex business rules into dependable customer and internal workflows.",
-		tools: ["Adyen", "Shopify API", "Tax APIs", "Vertex", "GA4"],
+			"Implement and support payment, commerce, tax, and analytics integrations across customer-facing and internal applications.",
+		tools: ["Adyen", "Shopify", "Liquid", "Vertex", "Tax APIs", "GA4"],
 	},
 	{
 		title: "Delivery & Automation",
 		description:
-			"Modernize, deploy, and support production applications through CI/CD pipelines, source control, dependency management, scripting, workflow automation, and cross-functional delivery.",
-		tools: [
-			"Azure DevOps",
-			"Azure Pipelines",
-			"Vercel",
-			"PowerShell",
-			"Git",
-			"CI/CD",
-			"Application Modernization",
-			"Dependency Modernization",
-			"Adobe Illustrator Automation (JavaScript)",
-		],
+			"Support application delivery and modernization through CI/CD, source control, deployment tooling, scripting, and workflow automation.",
+		tools: ["Azure DevOps", "Azure Pipelines", "Git", "CI/CD", "Vercel", "PowerShell"],
 	},
 ];
