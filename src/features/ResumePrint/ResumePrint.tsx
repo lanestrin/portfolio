@@ -5,33 +5,6 @@ const getOrganizationLabel = (organization: string[]) => {
 	return organization.length > 1 ? "Organization Evolution" : "Early Interface Design";
 };
 
-const renderEmphasis = (text: string) => {
-	return text.split(/(\*\*.*?\*\*)/g).map((part, index) => {
-		if (part.startsWith("**") && part.endsWith("**")) {
-			return <strong key={`${part}-${index}`}>{part.slice(2, -2)}</strong>;
-		}
-
-		return part;
-	});
-};
-
-const renderBullet = (bullet: string) => {
-	const colonIndex = bullet.indexOf(":");
-
-	if (colonIndex === -1) {
-		return renderEmphasis(bullet);
-	}
-
-	const label = bullet.slice(0, colonIndex);
-	const description = bullet.slice(colonIndex + 1).trim();
-
-	return (
-		<>
-			<strong>{label}:</strong> {renderEmphasis(description)}
-		</>
-	);
-};
-
 const ResumePrint = () => {
 	const handlePrint = async () => {
 		await document.fonts.ready;
@@ -169,7 +142,7 @@ const ResumePrint = () => {
 
 												<ul className={styles.bullets}>
 													{firstRole.bullets.map((bullet) => (
-														<li key={bullet}>{renderBullet(bullet)}</li>
+														<li key={bullet}>{bullet}</li>
 													))}
 												</ul>
 
@@ -201,7 +174,7 @@ const ResumePrint = () => {
 
 											<ul className={styles.bullets}>
 												{role.bullets.map((bullet) => (
-													<li key={bullet}>{renderBullet(bullet)}</li>
+													<li key={bullet}>{bullet}</li>
 												))}
 											</ul>
 
