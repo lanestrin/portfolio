@@ -225,11 +225,11 @@
     list-style-position: outside;
 
     li {
-        width: 80%;
-        margin-bottom: 8px;
+        width: 92%;
+        margin-bottom: 18px;
         padding-left: 4px;
         font-size: 11.5px;
-        line-height: 1.55;
+        line-height: 1.5;
 
         &::before {
             content: none;
@@ -518,7 +518,7 @@
      * Individual bullets should not split across pages.
      */
     .bullets li {
-        margin-bottom: 6px;
+        margin-bottom: 12px;
         line-height: 1.5;
 
         break-inside: avoid-page;
