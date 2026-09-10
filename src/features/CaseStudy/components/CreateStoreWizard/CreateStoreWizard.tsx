@@ -1,6 +1,4 @@
-import storeWizard1 from "../../../../assets/images/store-wizard1.png";
-import storeWizard2 from "../../../../assets/images/store-wizard2.png";
-import storeWizard3 from "../../../../assets/images/store-wizard3.png";
+import { images } from "../../../../assets/images";
 import styles from "./CreateStoreWizard.module.scss";
 
 const steps = [
@@ -10,7 +8,7 @@ const steps = [
 		title: "Choose team colors",
 		description:
 			"Organizations can start with popular color combinations or define their own. A live storefront preview shows how those colors carry through the experience before they move on.",
-		image: storeWizard1,
+		image: images.caseStudy.eStoreWizard1,
 		alt: "TeamStore Create Store Wizard showing team color presets, custom color controls, and a live storefront preview",
 	},
 	{
@@ -19,7 +17,7 @@ const steps = [
 		title: "Customize your artwork",
 		description:
 			"Teams can use built-in templates or upload finished art. I built an interactive editor that lets users personalize template content and reposition individual artwork elements with immediate visual feedback.",
-		image: storeWizard2,
+		image: images.caseStudy.eStoreWizard2,
 		alt: "TeamStore artwork editor showing editable organization text, mascot artwork, and position controls",
 	},
 	{
@@ -28,7 +26,7 @@ const steps = [
 		title: "Bring it to life on products",
 		description:
 			"Selected artwork can then be placed directly onto merchandise. Users can move and resize the design on each product so placement can be tuned before the item is added to the store.",
-		image: storeWizard3,
+		image: images.caseStudy.eStoreWizard3,
 		alt: "TeamStore product editor showing custom artwork positioned on a black and purple cap",
 	},
 ];
