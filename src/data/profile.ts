@@ -5,8 +5,6 @@ export interface Profile {
 	summary: string;
 	contact: {
 		email: string;
-		phone: string;
-		phoneHref: string;
 		location: string;
 		portfolio?: string;
 		github: string;
@@ -16,14 +14,12 @@ export interface Profile {
 
 export const profile: Profile = {
 	name: "Lan Nguyen",
-	title: "Senior Software Engineer",
-	subTitle: "Full-Stack Experience | Frontend Focus",
+	title: "Software Developer",
+	subTitle: "Full-Stack Experience | Frontend Focus | Modernization & Integrations",
 	summary:
-		"Senior Software Engineer with 5+ years of experience building and modernizing enterprise web applications, with a frontend focus in React and TypeScript and hands-on experience with C#/.NET and SQL. Strong in application modernization, frontend architecture, and workflow automation. Experienced in diagnosing performance and reliability problems in legacy systems and translating complex business workflows into maintainable, user-friendly applications.",
+		"Software developer with 5+ years of experience building and modernizing enterprise web applications using React, TypeScript, C#/.NET, SQL, and REST APIs. Experienced in frontend architecture, application modernization, third-party API integration, dependency modernization, testing, and workflow automation. Background in UI/UX and production systems, with a track record of translating complex business workflows into reliable, maintainable software.",
 	contact: {
 		email: "ln.nguy3n@gmail.com",
-		phone: "(913) 205-7926",
-		phoneHref: "tel:+19132057926",
 		location: "Olathe, Kansas",
 		portfolio: "https://lan-nguyen-dev.vercel.app",
 		github: "https://github.com/lanestrin",

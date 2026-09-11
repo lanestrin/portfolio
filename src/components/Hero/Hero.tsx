@@ -5,7 +5,6 @@ import {
 	FaGithub,
 	FaLinkedinIn,
 	FaLocationDot,
-	FaPhone,
 } from "react-icons/fa6";
 import { SiNextdotjs, SiReact, SiSass, SiTypescript } from "react-icons/si";
 
@@ -25,7 +24,6 @@ const contactItems = [
 		href: `mailto:${profile.contact.email}`,
 		icon: FaEnvelope,
 	},
-	{ label: "Phone", value: profile.contact.phone, href: profile.contact.phoneHref, icon: FaPhone },
 	{ label: "Location", value: profile.contact.location, icon: FaLocationDot },
 	{
 		label: "LinkedIn",

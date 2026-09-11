@@ -1,3 +1,12 @@
+import {
+	FaArrowUpRightFromSquare,
+	FaDownload,
+	FaEnvelope,
+	FaGithub,
+	FaLinkedinIn,
+	FaPhone,
+} from "react-icons/fa6";
+
 import { education, experience, profile, technicalSkills } from "../../data";
 import styles from "./ResumePrint.module.scss";
 
@@ -5,7 +14,11 @@ const getOrganizationLabel = (organization: string[]) => {
 	return organization.length > 1 ? "Organization Evolution" : "Early Interface Design";
 };
 
-const ResumePrint = () => {
+interface ResumePrintProps {
+	includePhone?: boolean;
+}
+
+const ResumePrint = ({ includePhone = false }: ResumePrintProps) => {
 	const handlePrint = async () => {
 		await document.fonts.ready;
 		window.print();
@@ -15,7 +28,8 @@ const ResumePrint = () => {
 		<main className={styles.resumePrint}>
 			<div className={styles.printToolbar}>
 				<button type="button" className={styles.printButton} onClick={handlePrint}>
-					Download Resume
+					<FaDownload aria-hidden="true" />
+					<span>Download Resume</span>
 				</button>
 			</div>
 
@@ -23,22 +37,56 @@ const ResumePrint = () => {
 				<header className={styles.header}>
 					<div>
 						<h1>{profile.name}</h1>
-
 						<p className={styles.title}>{profile.title}</p>
 					</div>
 
 					<div className={styles.contact}>
-						<a href={`mailto:${profile.contact.email}`}>{profile.contact.email}</a>
-
-						<a href={profile.contact.phoneHref}>{profile.contact.phone}</a>
-
-						<a href={profile.contact.linkedin} target="_blank" rel="noreferrer">
-							linkedin.com/in/lanestrin
+						<a className={styles.contactItem} href={`mailto:${profile.contact.email}`}>
+							<FaEnvelope className={styles.contactIcon} aria-hidden="true" />
+							<span>{profile.contact.email}</span>
 						</a>
 
-						<a href={profile.contact.portfolio} target="_blank" rel="noreferrer">
-							lan-nguyen-dev.vercel.app
+						{includePhone && (
+							<a className={styles.contactItem} href="tel:+19132057926">
+								<FaPhone className={styles.contactIcon} aria-hidden="true" />
+								<span>913-205-7926</span>
+							</a>
+						)}
+
+						<a
+							className={styles.contactItem}
+							href={profile.contact.linkedin}
+							target="_blank"
+							rel="noreferrer"
+						>
+							<FaLinkedinIn className={styles.contactIcon} aria-hidden="true" />
+							<span>linkedin.com/in/lanestrin</span>
 						</a>
+
+						<a
+							className={styles.contactItem}
+							href={profile.contact.github}
+							target="_blank"
+							rel="noreferrer"
+						>
+							<FaGithub className={styles.contactIcon} aria-hidden="true" />
+							<span>github.com/lanestrin</span>
+						</a>
+
+						{profile.contact.portfolio && (
+							<a
+								className={styles.contactItem}
+								href={profile.contact.portfolio}
+								target="_blank"
+								rel="noreferrer"
+							>
+								<FaArrowUpRightFromSquare
+									className={styles.contactIcon}
+									aria-hidden="true"
+								/>
+								<span>lan-nguyen-dev.vercel.app</span>
+							</a>
+						)}
 					</div>
 				</header>
 
@@ -72,144 +120,80 @@ const ResumePrint = () => {
 					</div>
 
 					<div className={styles.stack}>
-						{experience.map((career, careerIndex) => {
-							const [firstRole, ...remainingRoles] = career.roles;
-
-							return (
-								<section
-									key={career.organization.join("-")}
-									className={styles.organization}
-								>
-									<div className={styles.organizationIntro}>
-										<header className={styles.organizationHeader}>
-											<div className={styles.organizationMeta}>
-												<span className={styles.organizationNumber}>
-													{String(careerIndex + 1).padStart(2, "0")}
-												</span>
-
-												<span className={styles.organizationSlash} aria-hidden="true">
-													/
-												</span>
-
-												<span className={styles.organizationLabel}>
-													{getOrganizationLabel(career.organization)}
-												</span>
-											</div>
-
-											<ol
-												className={styles.organizationProgress}
-												aria-label="Organization progression"
-											>
-												{career.organization.map((company, index) => (
-													<li key={company}>
-														<span>{company}</span>
-
-														{index < career.organization.length - 1 && (
-															<span
-																className={styles.transitionIcon}
-																aria-hidden="true"
-															>
-																→
-															</span>
-														)}
-													</li>
-												))}
-											</ol>
-
-											{career.description && (
-												<p className={styles.organizationSummary}>
-													{career.description}
-												</p>
-											)}
-										</header>
-
-										{firstRole && (
-											<article
-												className={styles.job}
-												key={`${firstRole.company}-${firstRole.role}`}
-											>
-												<div className={styles.jobHeader}>
-													<div>
-														<h3>{firstRole.role}</h3>
-
-														<p>
-															{firstRole.company} · {firstRole.meta}
-														</p>
-													</div>
-
-													<span>{firstRole.period}</span>
-												</div>
-
-												<ul className={styles.bullets}>
-													{firstRole.bullets.map((bullet) => (
-														<li key={bullet}>{bullet}</li>
-													))}
-												</ul>
-
-												<ul
-													className={styles.stackList}
-													aria-label={`${firstRole.role} skills`}
-												>
-													{firstRole.stack.map((item) => (
-														<li key={item}>{item}</li>
-													))}
-												</ul>
-											</article>
-										)}
+						{experience.map((career, careerIndex) => (
+							<section key={career.organization.join("-")} className={styles.organization}>
+								<header className={styles.organizationHeader}>
+									<div className={styles.organizationMeta}>
+										<span className={styles.organizationNumber}>
+											{String(careerIndex + 1).padStart(2, "0")}
+										</span>
+										<span className={styles.organizationSlash} aria-hidden="true">
+											/
+										</span>
+										<span className={styles.organizationLabel}>
+											{getOrganizationLabel(career.organization)}
+										</span>
 									</div>
 
-									{remainingRoles.map((role) => (
-										<article key={`${role.company}-${role.role}`} className={styles.job}>
-											<div className={styles.jobHeader}>
-												<div>
-													<h3>{role.role}</h3>
+									<ol
+										className={styles.organizationProgress}
+										aria-label="Organization progression"
+									>
+										{career.organization.map((company, index) => (
+											<li key={company}>
+												<span>{company}</span>
+												{index < career.organization.length - 1 && (
+													<span className={styles.transitionIcon} aria-hidden="true">
+														→
+													</span>
+												)}
+											</li>
+										))}
+									</ol>
 
-													<p>
-														{role.company} · {role.meta}
-													</p>
-												</div>
+									{career.description && (
+										<p className={styles.organizationSummary}>{career.description}</p>
+									)}
+								</header>
 
-												<span>{role.period}</span>
+								{career.roles.map((role) => (
+									<article key={`${role.company}-${role.role}`} className={styles.job}>
+										<div className={styles.jobHeader}>
+											<div>
+												<h3>{role.role}</h3>
+												<p>
+													{role.company} · {role.meta}
+												</p>
 											</div>
+											<span>{role.period}</span>
+										</div>
 
-											<ul className={styles.bullets}>
-												{role.bullets.map((bullet) => (
-													<li key={bullet}>{bullet}</li>
-												))}
-											</ul>
+										{role.summary && <p className={styles.jobSummary}>{role.summary}</p>}
 
-											<ul
-												className={styles.stackList}
-												aria-label={`${role.role} skills`}
-											>
-												{role.stack.map((item) => (
-													<li key={item}>{item}</li>
-												))}
-											</ul>
-										</article>
-									))}
-								</section>
-							);
-						})}
+										<ul className={styles.bullets}>
+											{role.bullets.map((bullet) => (
+												<li key={bullet}>{bullet}</li>
+											))}
+										</ul>
+									</article>
+								))}
+							</section>
+						))}
 					</div>
 				</section>
 
-				<section className={styles.twoColumn}>
-					<section className={styles.section}>
-						<div className={styles.sectionTitle}>
-							<h2>Education</h2>
-						</div>
+				<section className={styles.section}>
+					<div className={styles.sectionTitle}>
+						<h2>Education</h2>
+					</div>
 
-						{education.map((item) => (
-							<article key={item.school} className={styles.compactItem}>
-								<h3>{item.school}</h3>
-
-								<p>{item.degree}</p>
-
-								<span>{item.period}</span>
-							</article>
-						))}
-					</section>
+					{education.map((item) => (
+						<article key={item.school} className={styles.compactItem}>
+							<h3>{item.school}</h3>
+							<p>{item.degree}</p>
+							<span>{item.period}</span>
+						</article>
+					))}
 				</section>
 			</section>
 		</main>

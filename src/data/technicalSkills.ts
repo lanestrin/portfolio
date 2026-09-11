@@ -8,7 +8,7 @@ export const technicalSkills: TechnicalSkill[] = [
 	{
 		title: "Frontend",
 		description:
-			"Build and modernize enterprise interfaces with React and TypeScript, focusing on maintainable component architecture, predictable state management, responsive design, accessibility, and user-friendly workflows.",
+			"Build and modernize enterprise interfaces with React and TypeScript, focusing on maintainable component architecture, state management, responsive design, accessibility, and user-friendly business workflows.",
 		tools: [
 			"React",
 			"TypeScript",
@@ -17,6 +17,7 @@ export const technicalSkills: TechnicalSkill[] = [
 			"Vite",
 			"React Query",
 			"React Context",
+			"Redux",
 			"HTML",
 			"CSS",
 			"SCSS",
@@ -28,8 +29,18 @@ export const technicalSkills: TechnicalSkill[] = [
 	{
 		title: "Backend, Data & APIs",
 		description:
-			"Contribute to application workflows using C#/.NET, SQL, and REST APIs, including controller validation and integration with existing backend services.",
-		tools: ["C#", ".NET", ".NET MVC", "REST APIs", "SQL", "Node.js", "Express.js"],
+			"Work across application boundaries using C#/.NET, SQL, and REST APIs, including controller validation, authentication flows, third-party integrations, and connections to existing backend services.",
+		tools: [
+			"C#",
+			".NET",
+			".NET MVC",
+			"REST APIs",
+			"SQL",
+			"Node.js",
+			"Express.js",
+			"Authentication",
+			"Third-Party API Integration",
+		],
 	},
 	{
 		title: "Testing",
@@ -46,15 +57,21 @@ export const technicalSkills: TechnicalSkill[] = [
 		],
 	},
 	{
-		title: "Commerce & Integrations",
-		description:
-			"Implement and support payment, commerce, tax, and analytics integrations across customer-facing and internal applications.",
-		tools: ["Adyen", "Shopify", "Liquid", "Vertex", "Tax APIs", "GA4"],
-	},
-	{
 		title: "Delivery & Automation",
 		description:
-			"Support application delivery and modernization through CI/CD, source control, deployment tooling, scripting, and workflow automation.",
-		tools: ["Azure DevOps", "Azure Pipelines", "Git", "CI/CD", "Vercel", "PowerShell"],
+			"Support application delivery and modernization through CI/CD, Azure tooling, dependency management, scripting, deployment workflows, and production automation.",
+		tools: [
+			"Azure DevOps",
+			"Azure Pipelines",
+			"Azure Storage Explorer",
+			"Git",
+			"CI/CD",
+			"Vercel",
+			"PowerShell",
+			"npm",
+			"NuGet",
+			"JavaScript Automation",
+			"Adobe Illustrator Scripting",
+		],
 	},
 ];
