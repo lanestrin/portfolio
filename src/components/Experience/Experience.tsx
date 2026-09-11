@@ -88,32 +88,39 @@ const Experience = () => {
 
 									<div className={styles.body}>
 										<div className={styles.positionHeader}>
-											<div>
+											<div className={styles.positionIntro}>
 												<h3>{role.role}</h3>
 
-												<p>
+												<p className={styles.positionMeta}>
 													<span>{role.company}</span>
 
 													<span aria-hidden="true">•</span>
 
 													<span>{role.meta}</span>
 												</p>
+
+												{role.summary && (
+													<p className={styles.positionSummary}>{role.summary}</p>
+												)}
+
+												<ul className={styles.bullets}>
+													{role.bullets.map((bullet) => (
+														<li key={bullet}>{bullet}</li>
+													))}
+												</ul>
+
+												<ul
+													className={styles.stackList}
+													aria-label={`${role.role} skills`}
+												>
+													{role.stack.map((item) => (
+														<li key={item}>{item}</li>
+													))}
+												</ul>
 											</div>
 
 											<span className={styles.period}>{role.period}</span>
 										</div>
-
-										<ul className={styles.bullets}>
-											{role.bullets.map((bullet) => (
-												<li key={bullet}>{bullet}</li>
-											))}
-										</ul>
-
-										<ul className={styles.stackList} aria-label={`${role.role} skills`}>
-											{role.stack.map((item) => (
-												<li key={item}>{item}</li>
-											))}
-										</ul>
 									</div>
 								</article>
 							))}

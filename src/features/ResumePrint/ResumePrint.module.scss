@@ -27,6 +27,11 @@
     font-weight: 700;
     cursor: pointer;
 
+    svg {
+        width: 13px;
+        height: 13px;
+    }
+
     &:hover {
         opacity: 0.88;
     }
@@ -48,8 +53,8 @@
 
 .header {
     display: grid;
-    grid-template-columns: 1fr 230px;
-    gap: 32px;
+    grid-template-columns: minmax(0, 1fr) 250px;
+    gap: 40px;
     padding-bottom: 28px;
     border-bottom: 1px solid var(--color-primary-18);
 
@@ -63,15 +68,6 @@
     }
 }
 
-.eyebrow {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--color-muted);
-}
 
 .title {
     margin: 12px 0 0;
@@ -85,14 +81,39 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    gap: 7px;
-    font-size: 12px;
-    line-height: 1.45;
+    gap: 8px;
+    min-width: 0;
+    font-size: 11.5px;
+    line-height: 1.3;
+}
 
-    a {
-        color: inherit;
-        text-decoration: none;
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    min-width: 0;
+    color: inherit;
+    text-decoration: none;
+
+    span {
+        display: block;
+        min-width: 0;
+        line-height: 1.3;
+        white-space: nowrap;
     }
+}
+
+a.contactItem:hover span {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.contactIcon {
+    flex: 0 0 13px;
+    width: 13px;
+    height: 13px;
+    color: var(--color-primary);
 }
 
 .summary {
@@ -136,10 +157,6 @@
     border-top: 1px solid var(--color-primary-14);
 }
 
-.organizationIntro {
-    break-inside: avoid;
-    page-break-inside: avoid;
-}
 
 .organizationHeader {
     margin-bottom: 28px;
@@ -203,7 +220,6 @@
 }
 
 .organizationSummary {
-    max-width: 72%;
     margin: 14px 0 0;
     font-size: 11.5px;
     line-height: 1.6;
@@ -218,6 +234,16 @@
     page-break-inside: avoid;
 }
 
+.jobSummary {
+    margin: 0 0 14px;
+    font-size: 11.5px;
+    font-style: italic;
+    line-height: 1.55;
+    color: rgba(31, 41, 55, 0.8);
+    padding: 5px 0 12px 0;
+    border-bottom: 1px solid var(--color-primary-14);
+}
+
 .bullets {
     margin: 0;
     padding-left: 1.25rem;
@@ -225,7 +251,6 @@
     list-style-position: outside;
 
     li {
-        width: 92%;
         margin-bottom: 18px;
         padding-left: 4px;
         font-size: 11.5px;
@@ -275,35 +300,6 @@
     }
 }
 
-.stackList {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-
-    margin: 12px 0 0;
-    padding: 0;
-    list-style: none;
-
-    li {
-        display: inline-flex;
-        align-items: center;
-
-        width: auto;
-        margin: 0;
-        padding: 3px 6px;
-
-        border: 1px solid rgba(16, 37, 58, 0.1);
-        border-radius: var(--radius-pill);
-
-        font-size: 8.5px;
-        font-weight: 700;
-        line-height: 1;
-        white-space: nowrap;
-
-        color: rgba(16, 37, 58, 0.72);
-        background: rgba(16, 37, 58, 0.022);
-    }
-}
 
 .skillsSection {
     padding: 0.22in 0 0.24in;
@@ -383,18 +379,6 @@
     }
 }
 
-.twoColumn {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 36px;
-    break-inside: avoid;
-    page-break-inside: avoid;
-
-    .section {
-        padding-bottom: 0;
-        border-bottom: 0;
-    }
-}
 
 .compactItem {
     margin-bottom: 18px;
@@ -418,6 +402,18 @@
         display: block;
         font-size: 11px;
         color: rgba(23, 34, 40, 0.6);
+    }
+}
+
+
+@media (max-width: 760px) {
+    .header {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .contact {
+        justify-content: flex-start;
     }
 }
 
@@ -448,23 +444,6 @@
     }
 
     /*
-     * Education is the only section currently inside twoColumn.
-     * Let it use the remaining space on the current page instead of
-     * forcing the entire block onto a new page.
-     */
-    .twoColumn {
-        display: block;
-        break-inside: auto;
-        page-break-inside: auto;
-
-        .section {
-            padding-top: 20px;
-            padding-bottom: 0;
-            border-bottom: 0;
-        }
-    }
-
-    /*
      * Keep the section title with the organization summary, but allow the
      * organization summary to remain at the bottom of page 1 while the first
      * job starts cleanly on page 2.
@@ -490,10 +469,6 @@
      * complete entry fits on the following page. Browsers will still split a
      * job that is taller than a printable page.
      */
-    .organizationIntro {
-        break-inside: auto;
-        page-break-inside: auto;
-    }
 
     .job {
         margin-top: 22px;
@@ -504,11 +479,20 @@
     }
 
     /*
-     * Keep the job title, company/meta line, and date together.
+     * Keep the job title, company/meta line, date, and role summary together.
      */
     .jobHeader {
         break-inside: avoid-page !important;
         page-break-inside: avoid !important;
+
+        break-after: avoid-page;
+        page-break-after: avoid;
+    }
+
+
+    .jobSummary {
+        break-inside: avoid-page;
+        page-break-inside: avoid;
 
         break-after: avoid-page;
         page-break-after: avoid;
@@ -528,14 +512,6 @@
     .bullets li:last-child {
         break-after: avoid-page;
         page-break-after: avoid;
-    }
-
-    .stackList {
-        break-inside: avoid-page;
-        page-break-inside: avoid;
-
-        break-before: avoid-page;
-        page-break-before: avoid;
     }
 
     * {
