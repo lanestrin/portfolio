@@ -19,7 +19,7 @@ export const profile: Profile = {
 	title: "Senior Software Engineer",
 	subTitle: "Full-Stack Experience | Frontend Focus",
 	summary:
-		"Senior Software Engineer with 5+ years of experience building and modernizing enterprise web applications, with a frontend focus in React and TypeScript and hands-on experience with C#/.NET and SQL. Strong in application modernization, frontend architecture, and workflow automation. Experienced in diagnosing performance and reliability problems in legacy systems and translating complex business workflows into maintainable, user-friendly applications.",
+		"Senior software engineer with 12+ years of experience across software development, workflow automation, application modernization, and technical systems, including 5+ years focused on enterprise web application development. Experienced with React, TypeScript, C#/.NET, SQL, REST APIs, frontend architecture, third-party integrations, testing, and modernization of legacy applications. Strong background translating complex business workflows into reliable, maintainable software while preserving production stability. Currently expanding into AI-assisted and AI-enabled application development, with a focus on practical LLM integration, structured outputs, validation, and human-in-the-loop workflows.",
 	contact: {
 		email: "ln.nguy3n@gmail.com",
 		phone: "(913) 205-7926",

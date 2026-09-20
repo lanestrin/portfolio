@@ -205,8 +205,6 @@ const ResumePrint = () => {
 								<h3>{item.school}</h3>
 
 								<p>{item.degree}</p>
-
-								<span>{item.period}</span>
 							</article>
 						))}
 					</section>

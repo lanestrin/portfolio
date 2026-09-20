@@ -46,10 +46,20 @@ export const technicalSkills: TechnicalSkill[] = [
 		],
 	},
 	{
-		title: "Commerce & Integrations",
+		title: "AI & LLM Integration",
 		description:
-			"Implement and support payment, commerce, tax, and analytics integrations across customer-facing and internal applications.",
-		tools: ["Adyen", "Shopify", "Liquid", "Vertex", "Tax APIs", "GA4"],
+			"Integrate AI and LLMs into applications to enhance workflows, automate tasks, and provide structured outputs with validation and human-in-the-loop processes.",
+		tools: [
+			"Generative AI",
+			"LLM-Assisted Development",
+			"Prompt Design",
+			"Structured Outputs",
+			"AI-Assisted Debugging",
+			"Code Analysis",
+			"Reasoning",
+			"Validation",
+			"Human-in-the-Loop Workflows",
+		],
 	},
 	{
 		title: "Delivery & Automation",
