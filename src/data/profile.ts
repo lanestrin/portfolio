@@ -17,7 +17,7 @@ export const profile: Profile = {
 	title: "Software Developer",
 	subTitle: "Full-Stack Experience | Frontend Focus | Modernization & Integrations",
 	summary:
-		"Software developer with 5+ years of experience building and modernizing enterprise web applications using React, TypeScript, C#/.NET, SQL, and REST APIs. Experienced in frontend architecture, application modernization, third-party API integration, dependency modernization, testing, and workflow automation. Background in UI/UX and production systems, with a track record of translating complex business workflows into reliable, maintainable software.",
+		"Senior software engineer with 12+ years of experience across software development, workflow automation, application modernization, and technical systems, including 5+ years focused on enterprise web application development. Experienced with React, TypeScript, C#/.NET, SQL, REST APIs, frontend architecture, third-party integrations, testing, and modernization of legacy applications. Strong background translating complex business workflows into reliable, maintainable software while preserving production stability. Currently expanding into AI-assisted and AI-enabled application development, with a focus on practical LLM integration, structured outputs, validation, and human-in-the-loop workflows.",
 	contact: {
 		email: "ln.nguy3n@gmail.com",
 		location: "Olathe, Kansas",

@@ -190,8 +190,8 @@ const ResumePrint = ({ includePhone = false }: ResumePrintProps) => {
 					{education.map((item) => (
 						<article key={item.school} className={styles.compactItem}>
 							<h3>{item.school}</h3>
+
 							<p>{item.degree}</p>
-							<span>{item.period}</span>
 						</article>
 					))}
 				</section>

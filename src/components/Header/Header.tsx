@@ -15,8 +15,8 @@ const Header = () => {
 
 					<nav className={styles.actions} aria-label="Primary actions">
 						<a
-							href="/Lan-Nguyen-Resume.pdf"
-							download="Lan-Nguyen-Resume.pdf"
+							href="/Lan-Nguyen-Resume-09202026.pdf"
+							download="Lan-Nguyen-Resume-09202026.pdf"
 							className={styles.iconButton}
 							aria-label="Download Resume"
 						>

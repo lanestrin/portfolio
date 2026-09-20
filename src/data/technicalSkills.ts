@@ -57,6 +57,22 @@ export const technicalSkills: TechnicalSkill[] = [
 		],
 	},
 	{
+		title: "AI & LLM Integration",
+		description:
+			"Integrate AI and LLMs into applications to enhance workflows, automate tasks, and provide structured outputs with validation and human-in-the-loop processes.",
+		tools: [
+			"Generative AI",
+			"LLM-Assisted Development",
+			"Prompt Design",
+			"Structured Outputs",
+			"AI-Assisted Debugging",
+			"Code Analysis",
+			"Reasoning",
+			"Validation",
+			"Human-in-the-Loop Workflows",
+		],
+	},
+	{
 		title: "Delivery & Automation",
 		description:
 			"Support application delivery and modernization through CI/CD, Azure tooling, dependency management, scripting, deployment workflows, and production automation.",
